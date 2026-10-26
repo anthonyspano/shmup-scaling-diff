@@ -1,0 +1,3115 @@
+fileFormatVersion: 2
+guid: 5e2df54fc49fe254cbdd0026fe0c0f72
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3619324961377965412
+    second: layer3_stars_0
+  - first:
+      213: 5414232930061934474
+    second: layer3_stars_1
+  - first:
+      213: -5961781992002844355
+    second: layer3_stars_2
+  - first:
+      213: -3818547704646460095
+    second: layer3_stars_3
+  - first:
+      213: 6603115956004409861
+    second: layer3_stars_4
+  - first:
+      213: 5369624129193968098
+    second: layer3_stars_5
+  - first:
+      213: 2696062288992923268
+    second: layer3_stars_6
+  - first:
+      213: 3408695729948196435
+    second: layer3_stars_7
+  - first:
+      213: -28496783596930641
+    second: layer3_stars_8
+  - first:
+      213: -5715128858528954615
+    second: layer3_stars_9
+  - first:
+      213: -1409911435783671430
+    second: layer3_stars_10
+  - first:
+      213: 7782765744249770473
+    second: layer3_stars_11
+  - first:
+      213: -2102569918319084982
+    second: layer3_stars_12
+  - first:
+      213: 6372569955669417086
+    second: layer3_stars_13
+  - first:
+      213: 4977896399577804875
+    second: layer3_stars_14
+  - first:
+      213: -6012997006146578327
+    second: layer3_stars_15
+  - first:
+      213: 6916982675647759074
+    second: layer3_stars_16
+  - first:
+      213: 3975660087836418946
+    second: layer3_stars_17
+  - first:
+      213: 5524996323496843750
+    second: layer3_stars_18
+  - first:
+      213: 197691106591073639
+    second: layer3_stars_19
+  - first:
+      213: 4657600482559023530
+    second: layer3_stars_20
+  - first:
+      213: 8393440191460745683
+    second: layer3_stars_21
+  - first:
+      213: 6536374988940605352
+    second: layer3_stars_22
+  - first:
+      213: -6945665403995167701
+    second: layer3_stars_23
+  - first:
+      213: -7311703800132266471
+    second: layer3_stars_24
+  - first:
+      213: 7909011834567666768
+    second: layer3_stars_25
+  - first:
+      213: 7377447443559955070
+    second: layer3_stars_26
+  - first:
+      213: 222429345469937014
+    second: layer3_stars_27
+  - first:
+      213: -4465034299990966399
+    second: layer3_stars_28
+  - first:
+      213: 1276426718580418430
+    second: layer3_stars_29
+  - first:
+      213: -7616081154482492420
+    second: layer3_stars_30
+  - first:
+      213: -4264924437590843466
+    second: layer3_stars_31
+  - first:
+      213: -656627228420275018
+    second: layer3_stars_32
+  - first:
+      213: -7409375590722427221
+    second: layer3_stars_33
+  - first:
+      213: 189587788296824866
+    second: layer3_stars_34
+  - first:
+      213: 7347633623822126598
+    second: layer3_stars_35
+  - first:
+      213: -3346209849868195605
+    second: layer3_stars_36
+  - first:
+      213: -3765594154489978131
+    second: layer3_stars_37
+  - first:
+      213: 5697630225920033025
+    second: layer3_stars_38
+  - first:
+      213: -4227343999654712274
+    second: layer3_stars_39
+  - first:
+      213: 4493716448691837903
+    second: layer3_stars_40
+  - first:
+      213: 7142008603402485520
+    second: layer3_stars_41
+  - first:
+      213: -8786858762917009246
+    second: layer3_stars_42
+  - first:
+      213: 1322980647114693787
+    second: layer3_stars_43
+  - first:
+      213: -6826927891304840966
+    second: layer3_stars_44
+  - first:
+      213: 2162357861889320627
+    second: layer3_stars_45
+  - first:
+      213: 3333371336808133081
+    second: layer3_stars_46
+  - first:
+      213: -5638358617369337089
+    second: layer3_stars_47
+  - first:
+      213: -1475480123029026926
+    second: layer3_stars_48
+  - first:
+      213: -2340079374165204428
+    second: layer3_stars_49
+  - first:
+      213: -9151305768427513089
+    second: layer3_stars_50
+  - first:
+      213: -7323841776670446478
+    second: layer3_stars_51
+  - first:
+      213: 3114122885806042068
+    second: layer3_stars_52
+  - first:
+      213: 2435976219934772058
+    second: layer3_stars_53
+  - first:
+      213: 8739493782003628305
+    second: layer3_stars_54
+  - first:
+      213: -8233659615991236513
+    second: layer3_stars_55
+  - first:
+      213: 3224084717172264957
+    second: layer3_stars_56
+  - first:
+      213: 2163104395540569824
+    second: layer3_stars_57
+  - first:
+      213: 984301149221072980
+    second: layer3_stars_58
+  - first:
+      213: 8108703024897593413
+    second: layer3_stars_59
+  - first:
+      213: 3924742604530595918
+    second: layer3_stars_60
+  - first:
+      213: 7924793403027872243
+    second: layer3_stars_61
+  - first:
+      213: 1355962905856880858
+    second: layer3_stars_62
+  - first:
+      213: 3357796284661979639
+    second: layer3_stars_63
+  - first:
+      213: -8802301577368093411
+    second: layer3_stars_64
+  - first:
+      213: -1725554243633513909
+    second: layer3_stars_65
+  - first:
+      213: 844123343630410844
+    second: layer3_stars_66
+  - first:
+      213: 819731432025949224
+    second: layer3_stars_67
+  - first:
+      213: -8295151203965164219
+    second: layer3_stars_68
+  - first:
+      213: -4041731669895761833
+    second: layer3_stars_69
+  - first:
+      213: -5627248709347294193
+    second: layer3_stars_70
+  - first:
+      213: 8015242033903159608
+    second: layer3_stars_71
+  - first:
+      213: -3829677682341659902
+    second: layer3_stars_72
+  - first:
+      213: -4191388651855811138
+    second: layer3_stars_73
+  - first:
+      213: -1552515757574006865
+    second: layer3_stars_74
+  - first:
+      213: -3041000904602936172
+    second: layer3_stars_75
+  - first:
+      213: 4562888537471945279
+    second: layer3_stars_76
+  - first:
+      213: -609075079207395989
+    second: layer3_stars_77
+  - first:
+      213: 374670805122236689
+    second: layer3_stars_78
+  - first:
+      213: -2173555740860727806
+    second: layer3_stars_79
+  - first:
+      213: 7238075775751129663
+    second: layer3_stars_80
+  - first:
+      213: -866232032668187611
+    second: layer3_stars_81
+  - first:
+      213: 474946750550761474
+    second: layer3_stars_82
+  - first:
+      213: -5628645423211565011
+    second: layer3_stars_83
+  - first:
+      213: -6654642422973320804
+    second: layer3_stars_84
+  - first:
+      213: -3806779570895388168
+    second: layer3_stars_85
+  - first:
+      213: 3160940493323128121
+    second: layer3_stars_86
+  - first:
+      213: 1735043198645383830
+    second: layer3_stars_87
+  - first:
+      213: -2702170472052005957
+    second: layer3_stars_88
+  - first:
+      213: 6318877708971999028
+    second: layer3_stars_89
+  - first:
+      213: -5749311914892574804
+    second: layer3_stars_90
+  - first:
+      213: 4535054572851852251
+    second: layer3_stars_91
+  - first:
+      213: -7424250633885136107
+    second: layer3_stars_92
+  - first:
+      213: -6685774225717613306
+    second: layer3_stars_93
+  - first:
+      213: -7659871459709273423
+    second: layer3_stars_94
+  - first:
+      213: 3064100096072625239
+    second: layer3_stars_95
+  - first:
+      213: 7696987673503856117
+    second: layer3_stars_96
+  - first:
+      213: -1671116556336135552
+    second: layer3_stars_97
+  - first:
+      213: 4085728135471938524
+    second: layer3_stars_98
+  - first:
+      213: 1306264485823353322
+    second: layer3_stars_99
+  - first:
+      213: 6076033306533621229
+    second: layer3_stars_100
+  - first:
+      213: -3475060993883102610
+    second: layer3_stars_101
+  - first:
+      213: 2501619117825461200
+    second: layer3_stars_102
+  - first:
+      213: 6259870984455340817
+    second: layer3_stars_103
+  - first:
+      213: 543893858642964638
+    second: layer3_stars_104
+  - first:
+      213: -7199850791931816997
+    second: layer3_stars_105
+  - first:
+      213: -7403102002558451020
+    second: layer3_stars_106
+  - first:
+      213: -3797413572181065348
+    second: layer3_stars_107
+  - first:
+      213: 1671230859950403612
+    second: layer3_stars_108
+  - first:
+      213: -1807052927347445219
+    second: layer3_stars_109
+  - first:
+      213: -9016500650064740810
+    second: layer3_stars_110
+  - first:
+      213: 6674852560956813437
+    second: layer3_stars_111
+  - first:
+      213: 8297946251595799352
+    second: layer3_stars_112
+  - first:
+      213: 3894003145135004473
+    second: layer3_stars_113
+  - first:
+      213: -6258342100829356829
+    second: layer3_stars_114
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: layer3_stars_0
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1028
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9aac56af1395cdc0800000000000000
+      internalID: -3619324961377965412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_1
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1063
+        width: 31
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f509ff928332b40800000000000000
+      internalID: 5414232930061934474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_2
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 1054
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39895a7dde734da0800000000000000
+      internalID: -5961781992002844355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_3
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1005
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d1aaa181bc10bc0800000000000000
+      internalID: -3818547704646460095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_4
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 980
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5025b582afaf2ab50800000000000000
+      internalID: 6603115956004409861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_5
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 1025
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e109fd22bcb48a40800000000000000
+      internalID: 5369624129193968098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_6
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 998
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48eefb31e565a6520800000000000000
+      internalID: 2696062288992923268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_7
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 983
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ef3f2d4be1e4f20800000000000000
+      internalID: 3408695729948196435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_8
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 1002
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9b6788352ca9ff0800000000000000
+      internalID: -28496783596930641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_9
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 958
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9074ccd4598cfa0b0800000000000000
+      internalID: -5715128858528954615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_10
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 944
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a717a59e40dfe6ce0800000000000000
+      internalID: -1409911435783671430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 939
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e11614a530f10c60800000000000000
+      internalID: 7782765744249770473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_12
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 965
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a3b279ccb22d2e0800000000000000
+      internalID: -2102569918319084982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_13
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 954
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c90028c9aef6850800000000000000
+      internalID: 6372569955669417086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 907
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40f781c66a051540800000000000000
+      internalID: 4977896399577804875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_15
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 883
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9685525c41b8d8ca0800000000000000
+      internalID: -6012997006146578327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_16
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 926
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e20483881f0eff50800000000000000
+      internalID: 6916982675647759074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_17
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 912
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 283203339c16c2730800000000000000
+      internalID: 3975660087836418946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_18
+      rect:
+        serializedVersion: 2
+        x: 1484
+        y: 911
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e95e5f22eabcac40800000000000000
+      internalID: 5524996323496843750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_19
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 921
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7656d9793075eb200800000000000000
+      internalID: 197691106591073639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_20
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 896
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa95e9c36fe13a040800000000000000
+      internalID: 4657600482559023530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_21
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 870
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d1218f326d7b7470800000000000000
+      internalID: 8393440191460745683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_22
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 852
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a77d86db6ed5ba50800000000000000
+      internalID: 6536374988940605352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_23
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 857
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24e5226d1a0c9f90800000000000000
+      internalID: -6945665403995167701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_24
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 783
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9161e32022c978a90800000000000000
+      internalID: -7311703800132266471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_25
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 824
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c24cb1c5472cd60800000000000000
+      internalID: 7909011834567666768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_26
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 807
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7a318ecc55f16660800000000000000
+      internalID: 7377447443559955070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_27
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 803
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 675bb5caf4a361300800000000000000
+      internalID: 222429345469937014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_28
+      rect:
+        serializedVersion: 2
+        x: 1346
+        y: 801
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f7a1ff5f20902c0800000000000000
+      internalID: -4465034299990966399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_29
+      rect:
+        serializedVersion: 2
+        x: 1525
+        y: 814
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77adc67657c6b110800000000000000
+      internalID: 1276426718580418430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_30
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 747
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb268eaa8e3e4690800000000000000
+      internalID: -7616081154482492420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_31
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 785
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bfd38f02d1ffc4c0800000000000000
+      internalID: -4264924437590843466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_32
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 759
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b40924c30133e6f0800000000000000
+      internalID: -656627228420275018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_33
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 756
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba62a83282c9c2990800000000000000
+      internalID: -7409375590722427221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_34
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 757
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2282f27c61d81a200800000000000000
+      internalID: 189587788296824866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_35
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 786
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60e42a7f9d908f560800000000000000
+      internalID: 7347633623822126598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_36
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 762
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be861badedfdf81d0800000000000000
+      internalID: -3346209849868195605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_37
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 732
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de26655411cedbbc0800000000000000
+      internalID: -3765594154489978131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_38
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 741
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1010e7dc08c021f40800000000000000
+      internalID: 5697630225920033025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_39
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 732
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2ca33d97057555c0800000000000000
+      internalID: -4227343999654712274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_40
+      rect:
+        serializedVersion: 2
+        x: 1402
+        y: 723
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb5b952d43ec5e30800000000000000
+      internalID: 4493716448691837903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_41
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 730
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01fb69c1cf28d1360800000000000000
+      internalID: 7142008603402485520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_42
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 690
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8adc8828ece0680800000000000000
+      internalID: -8786858762917009246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_43
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 715
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9cdcfb93eb2c5210800000000000000
+      internalID: 1322980647114693787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_44
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 714
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af08193e041e141a0800000000000000
+      internalID: -6826927891304840966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_45
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 713
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6af2bc40d320e10800000000000000
+      internalID: 2162357861889320627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_46
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 696
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d1fae2e193824e20800000000000000
+      internalID: 3333371336808133081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_47
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 714
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff22077f5b680c1b0800000000000000
+      internalID: -5638358617369337089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_48
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 713
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29784b145aa068be0800000000000000
+      internalID: -1475480123029026926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_49
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 621
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4322aac153e568fd0800000000000000
+      internalID: -2340079374165204428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_50
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 597
+        width: 59
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa15e9a3e7000180800000000000000
+      internalID: -9151305768427513089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_51
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 654
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c646e15bc7c5a90800000000000000
+      internalID: -7323841776670446478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_52
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 672
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4db226be346973b20800000000000000
+      internalID: 3114122885806042068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_53
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 673
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5bc28637735ec120800000000000000
+      internalID: 2435976219934772058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_54
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 651
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 119bf097a4be84970800000000000000
+      internalID: 8739493782003628305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_55
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 662
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58fc5bf33a2cbd80800000000000000
+      internalID: -8233659615991236513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_56
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 617
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff81d4e7ff3ebc20800000000000000
+      internalID: 3224084717172264957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_57
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 602
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee1844bcf3e40e10800000000000000
+      internalID: 2163104395540569824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_58
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 640
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450b45f1ea0f8ad00800000000000000
+      internalID: 984301149221072980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_59
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 548
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540182c7076e78070800000000000000
+      internalID: 8108703024897593413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_60
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 559
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4833e9ca9c777630800000000000000
+      internalID: 3924742604530595918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_61
+      rect:
+        serializedVersion: 2
+        x: 1459
+        y: 575
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9d5d9dc958afd60800000000000000
+      internalID: 7924793403027872243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_62
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 582
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0b434241951d210800000000000000
+      internalID: 1355962905856880858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_63
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 498
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f957673ee9499e20800000000000000
+      internalID: 3357796284661979639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_64
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 494
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d3d1b1a51f7d580800000000000000
+      internalID: -8802301577368093411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_65
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 503
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a7e8bce899d08e0800000000000000
+      internalID: -1725554243633513909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_66
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 508
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54a4bb65bde6bb00800000000000000
+      internalID: 844123343630410844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_67
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 524
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8240121f465406b00800000000000000
+      internalID: 819731432025949224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_68
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 500
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 545a089fde3b1ec80800000000000000
+      internalID: -8295151203965164219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_69
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 469
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750ba62d572e8e7c0800000000000000
+      internalID: -4041731669895761833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_70
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 468
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0444900d1ff7e1b0800000000000000
+      internalID: -5627248709347294193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_71
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 482
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839c39bc92cdb3f60800000000000000
+      internalID: 8015242033903159608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_72
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 466
+        width: 53
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20bb8cb30704adac0800000000000000
+      internalID: -3829677682341659902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_73
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 417
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebde7826a3235d5c0800000000000000
+      internalID: -4191388651855811138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_74
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 410
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7da91e42b547ae0800000000000000
+      internalID: -1552515757574006865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_75
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 364
+        width: 49
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c10870ac13cc5d0800000000000000
+      internalID: -3041000904602936172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_76
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 428
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a87b913f2a25f30800000000000000
+      internalID: 4562888537471945279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_77
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 411
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ddc4641712c87f0800000000000000
+      internalID: -609075079207395989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_78
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 417
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1114507bc19133500800000000000000
+      internalID: 374670805122236689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_79
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 372
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20e3c76d19af5d1e0800000000000000
+      internalID: -2173555740860727806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_80
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 295
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a810fa19fc27460800000000000000
+      internalID: 7238075775751129663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_81
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 293
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5248fb74e868af3f0800000000000000
+      internalID: -866232032668187611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_82
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 324
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200edc1ad89579600800000000000000
+      internalID: 474946750550761474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_83
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 321
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20b8d63fc803e1b0800000000000000
+      internalID: -5628645423211565011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_84
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 316
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c913e6f59f5f5a3a0800000000000000
+      internalID: -6654642422973320804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_85
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 315
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f10192462a9b2bc0800000000000000
+      internalID: -3806779570895388168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_86
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 317
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d4cac91aaeddb20800000000000000
+      internalID: 3160940493323128121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_87
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 281
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6923735b89c141810800000000000000
+      internalID: 1735043198645383830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_88
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 255
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb36acab546ff7ad0800000000000000
+      internalID: -2702170472052005957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_89
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 249
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43ff8662cc921b750800000000000000
+      internalID: 6318877708971999028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_90
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 261
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf38e946475630b0800000000000000
+      internalID: -5749311914892574804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_91
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 251
+        width: 25
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd378d33b10cfee30800000000000000
+      internalID: 4535054572851852251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_92
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 274
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51bcec34263c7f890800000000000000
+      internalID: -7424250633885136107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_93
+      rect:
+        serializedVersion: 2
+        x: 1718
+        y: 244
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60da3a3b3cb5733a0800000000000000
+      internalID: -6685774225717613306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_94
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 236
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba30eabd7ba2b590800000000000000
+      internalID: -7659871459709273423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_95
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 241
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c26a69dced58a20800000000000000
+      internalID: 3064100096072625239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_96
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 234
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f5f1c7328131da60800000000000000
+      internalID: 7696987673503856117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_97
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 210
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0828f4198500fc8e0800000000000000
+      internalID: -1671116556336135552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_98
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 209
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdbbf93971c63b830800000000000000
+      internalID: 4085728135471938524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_99
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 186
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1953401a8c02210800000000000000
+      internalID: 1306264485823353322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_100
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 174
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dede06f9918625450800000000000000
+      internalID: 6076033306533621229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_101
+      rect:
+        serializedVersion: 2
+        x: 834
+        y: 95
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6228ce007a16cfc0800000000000000
+      internalID: -3475060993883102610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_102
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 140
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db0051655987b220800000000000000
+      internalID: 2501619117825461200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_103
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 81
+        width: 74
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1134c308e778fd650800000000000000
+      internalID: 6259870984455340817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_104
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 99
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e903eef259c4c8700800000000000000
+      internalID: 543893858642964638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_105
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 85
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3d617e9ddf41c90800000000000000
+      internalID: -7199850791931816997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_106
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 71
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b24585b3f5e24990800000000000000
+      internalID: -7403102002558451020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_107
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 58
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7186e4c970ec4bc0800000000000000
+      internalID: -3797413572181065348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_108
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 11
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10b301dc97613710800000000000000
+      internalID: 1671230859950403612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_109
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 27
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d12302fcfee0ce6e0800000000000000
+      internalID: -1807052927347445219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_110
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 28
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63effc32e64fed280800000000000000
+      internalID: -9016500650064740810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_111
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 29
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70ffef0a07d1ac50800000000000000
+      internalID: 6674852560956813437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_112
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 47
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83bd6a3c62a382370800000000000000
+      internalID: 8297946251595799352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_113
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 47
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b960caa374a0630800000000000000
+      internalID: 3894003145135004473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer3_stars_114
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ecb1357407e529a0800000000000000
+      internalID: -6258342100829356829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      layer3_stars_0: -3619324961377965412
+      layer3_stars_1: 5414232930061934474
+      layer3_stars_10: -1409911435783671430
+      layer3_stars_100: 6076033306533621229
+      layer3_stars_101: -3475060993883102610
+      layer3_stars_102: 2501619117825461200
+      layer3_stars_103: 6259870984455340817
+      layer3_stars_104: 543893858642964638
+      layer3_stars_105: -7199850791931816997
+      layer3_stars_106: -7403102002558451020
+      layer3_stars_107: -3797413572181065348
+      layer3_stars_108: 1671230859950403612
+      layer3_stars_109: -1807052927347445219
+      layer3_stars_11: 7782765744249770473
+      layer3_stars_110: -9016500650064740810
+      layer3_stars_111: 6674852560956813437
+      layer3_stars_112: 8297946251595799352
+      layer3_stars_113: 3894003145135004473
+      layer3_stars_114: -6258342100829356829
+      layer3_stars_12: -2102569918319084982
+      layer3_stars_13: 6372569955669417086
+      layer3_stars_14: 4977896399577804875
+      layer3_stars_15: -6012997006146578327
+      layer3_stars_16: 6916982675647759074
+      layer3_stars_17: 3975660087836418946
+      layer3_stars_18: 5524996323496843750
+      layer3_stars_19: 197691106591073639
+      layer3_stars_2: -5961781992002844355
+      layer3_stars_20: 4657600482559023530
+      layer3_stars_21: 8393440191460745683
+      layer3_stars_22: 6536374988940605352
+      layer3_stars_23: -6945665403995167701
+      layer3_stars_24: -7311703800132266471
+      layer3_stars_25: 7909011834567666768
+      layer3_stars_26: 7377447443559955070
+      layer3_stars_27: 222429345469937014
+      layer3_stars_28: -4465034299990966399
+      layer3_stars_29: 1276426718580418430
+      layer3_stars_3: -3818547704646460095
+      layer3_stars_30: -7616081154482492420
+      layer3_stars_31: -4264924437590843466
+      layer3_stars_32: -656627228420275018
+      layer3_stars_33: -7409375590722427221
+      layer3_stars_34: 189587788296824866
+      layer3_stars_35: 7347633623822126598
+      layer3_stars_36: -3346209849868195605
+      layer3_stars_37: -3765594154489978131
+      layer3_stars_38: 5697630225920033025
+      layer3_stars_39: -4227343999654712274
+      layer3_stars_4: 6603115956004409861
+      layer3_stars_40: 4493716448691837903
+      layer3_stars_41: 7142008603402485520
+      layer3_stars_42: -8786858762917009246
+      layer3_stars_43: 1322980647114693787
+      layer3_stars_44: -6826927891304840966
+      layer3_stars_45: 2162357861889320627
+      layer3_stars_46: 3333371336808133081
+      layer3_stars_47: -5638358617369337089
+      layer3_stars_48: -1475480123029026926
+      layer3_stars_49: -2340079374165204428
+      layer3_stars_5: 5369624129193968098
+      layer3_stars_50: -9151305768427513089
+      layer3_stars_51: -7323841776670446478
+      layer3_stars_52: 3114122885806042068
+      layer3_stars_53: 2435976219934772058
+      layer3_stars_54: 8739493782003628305
+      layer3_stars_55: -8233659615991236513
+      layer3_stars_56: 3224084717172264957
+      layer3_stars_57: 2163104395540569824
+      layer3_stars_58: 984301149221072980
+      layer3_stars_59: 8108703024897593413
+      layer3_stars_6: 2696062288992923268
+      layer3_stars_60: 3924742604530595918
+      layer3_stars_61: 7924793403027872243
+      layer3_stars_62: 1355962905856880858
+      layer3_stars_63: 3357796284661979639
+      layer3_stars_64: -8802301577368093411
+      layer3_stars_65: -1725554243633513909
+      layer3_stars_66: 844123343630410844
+      layer3_stars_67: 819731432025949224
+      layer3_stars_68: -8295151203965164219
+      layer3_stars_69: -4041731669895761833
+      layer3_stars_7: 3408695729948196435
+      layer3_stars_70: -5627248709347294193
+      layer3_stars_71: 8015242033903159608
+      layer3_stars_72: -3829677682341659902
+      layer3_stars_73: -4191388651855811138
+      layer3_stars_74: -1552515757574006865
+      layer3_stars_75: -3041000904602936172
+      layer3_stars_76: 4562888537471945279
+      layer3_stars_77: -609075079207395989
+      layer3_stars_78: 374670805122236689
+      layer3_stars_79: -2173555740860727806
+      layer3_stars_8: -28496783596930641
+      layer3_stars_80: 7238075775751129663
+      layer3_stars_81: -866232032668187611
+      layer3_stars_82: 474946750550761474
+      layer3_stars_83: -5628645423211565011
+      layer3_stars_84: -6654642422973320804
+      layer3_stars_85: -3806779570895388168
+      layer3_stars_86: 3160940493323128121
+      layer3_stars_87: 1735043198645383830
+      layer3_stars_88: -2702170472052005957
+      layer3_stars_89: 6318877708971999028
+      layer3_stars_9: -5715128858528954615
+      layer3_stars_90: -5749311914892574804
+      layer3_stars_91: 4535054572851852251
+      layer3_stars_92: -7424250633885136107
+      layer3_stars_93: -6685774225717613306
+      layer3_stars_94: -7659871459709273423
+      layer3_stars_95: 3064100096072625239
+      layer3_stars_96: 7696987673503856117
+      layer3_stars_97: -1671116556336135552
+      layer3_stars_98: 4085728135471938524
+      layer3_stars_99: 1306264485823353322
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 21037, guid: 0000000000000000e000000000000000, type: 0}
+  blockCollection:
+    blocks: []
+  references:
+    version: 2
+    RefIds: []
