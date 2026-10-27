@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 namespace ScalingShmup.Player
 {
-    // Tank-style controls on the XY plane: left and right turn the ship, up and down move it
-    // along the way its nose points (its local up axis). The ship is kept on screen.
+    // Tank-style controls on the XY plane: left and right turn the ship, and up moves it forward
+    // along the way its nose points (its local up axis). There is no reverse. The ship is kept on screen.
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovement : MonoBehaviour
     {
@@ -45,8 +45,9 @@ namespace ScalingShmup.Player
         private void Update()
         {
             // Axes are used separately (turn and thrust), so diagonals must not shrink either one.
+            // Thrust is clamped at 0 so the ship can only move forward, never reverse.
             Vector2 input = _moveAction.action.ReadValue<Vector2>();
-            _moveInput = new Vector2(Mathf.Clamp(input.x, -1f, 1f), Mathf.Clamp(input.y, -1f, 1f));
+            _moveInput = new Vector2(Mathf.Clamp(input.x, -1f, 1f), Mathf.Clamp(input.y, 0f, 1f));
         }
 
         private void FixedUpdate()

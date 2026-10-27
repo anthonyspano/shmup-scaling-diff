@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b99b43ccb6bfc449c745dbe7370e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.EnemyLineMover
-  _speed: 4
+  _speed: 5
   _exitMargin: 1
   _camera: {fileID: 0}
   _faceTravelDirection: 1
@@ -240,4 +240,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Effects.DeathExplosion
   _explosionPrefab: {fileID: 3537198034141965661, guid: 0b123795089ae2a40806f1209d536ba0, type: 3}
   _clip: {fileID: 7400000, guid: d6777f0b3aa9c694ba001d41dcc78ac4, type: 2}
-  _scale: 0.6
+  _scale: 0.7

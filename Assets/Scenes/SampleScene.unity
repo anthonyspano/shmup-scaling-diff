@@ -130,7 +130,8 @@ GameObject:
   - component: {fileID: 138055956}
   - component: {fileID: 138055957}
   - component: {fileID: 138055958}
-  m_Layer: 0
+  - component: {fileID: 138055959}
+  m_Layer: 8
   m_Name: turret2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,6 +259,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40625, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &138055959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138055955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
+  _shotsPerSecond: 2
+  _sweepDuration: 3
+  _damage: 1
+  _motion:
+    Speed: 3
+    Acceleration: 0
+    SpeedRange: {x: 0, y: 6}
+    AngularVelocity: 0
+    WaveAmplitude: 0
+    WaveFrequency: 0
 --- !u!1 &139485187
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +933,8 @@ GameObject:
   - component: {fileID: 666851459}
   - component: {fileID: 666851458}
   - component: {fileID: 666851460}
-  m_Layer: 0
+  - component: {fileID: 666851461}
+  m_Layer: 8
   m_Name: turret1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1038,6 +1062,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40625, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &666851461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666851457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
+  _shotsPerSecond: 2
+  _sweepDuration: 3
+  _damage: 1
+  _motion:
+    Speed: 3
+    Acceleration: 0
+    SpeedRange: {x: 0, y: 6}
+    AngularVelocity: 0
+    WaveAmplitude: 0
+    WaveFrequency: 0
 --- !u!1 &765220197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1095,8 @@ GameObject:
   - component: {fileID: 765220198}
   - component: {fileID: 765220199}
   - component: {fileID: 765220200}
-  m_Layer: 0
+  - component: {fileID: 765220201}
+  m_Layer: 8
   m_Name: turret4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,6 +1224,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40625, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &765220201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765220197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
+  _shotsPerSecond: 2
+  _sweepDuration: 3
+  _damage: 1
+  _motion:
+    Speed: 3
+    Acceleration: 0
+    SpeedRange: {x: 0, y: 6}
+    AngularVelocity: 0
+    WaveAmplitude: 0
+    WaveFrequency: 0
 --- !u!1 &854635495
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,13 +1951,18 @@ GameObject:
   - component: {fileID: 1315489489}
   - component: {fileID: 1315489488}
   - component: {fileID: 1315489490}
-  m_Layer: 0
+  - component: {fileID: 1315489495}
+  - component: {fileID: 1315489494}
+  - component: {fileID: 1315489493}
+  - component: {fileID: 1315489492}
+  - component: {fileID: 1315489491}
+  m_Layer: 8
   m_Name: Stage 1 boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1315489488
 SpriteRenderer:
   serializedVersion: 3
@@ -1958,7 +2032,7 @@ Transform:
   m_GameObject: {fileID: 1315489487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 6.89, y: -0.39, z: 0}
+  m_LocalPosition: {x: 12.21, y: -0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2004,6 +2078,100 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -0.0000000023062223, y: 0.019345997}
   m_Radius: 1.5714267
+--- !u!114 &1315489491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702293ef7efcce847876404062ff53f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.Stage1Boss
+  _projectilePool: {fileID: 309885242}
+  _camera: {fileID: 0}
+  _verticalSpeed: 0.75
+  _screenMargin: 1.5
+  _setTwoHealthFraction: 0.5
+  _figureEightWidth: 3
+  _figureEightHeight: 7
+  _figureEightDuration: 6
+  _pauseBetweenPaths: 2
+--- !u!114 &1315489492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c6e42d2df991e4db0ff4afca251141, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Effects.DeathExplosion
+  _explosionPrefab: {fileID: 3537198034141965661, guid: 0b123795089ae2a40806f1209d536ba0, type: 3}
+  _clip: {fileID: 7400000, guid: 5cea4b2af07648949aa78ec49f67f63e, type: 2}
+  _scale: 3
+--- !u!114 &1315489493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _destroyOnDeath: 1
+  _canShoot: 1
+--- !u!114 &1315489494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f10c831971e837448508bac13fab354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Combat.Health
+  _maxHealth: 60
+  _healthDamagedBy: 3
+  _maxOvershield: 0
+  _overshieldDamagedBy: 1
+  _overshieldBlocksHealthDamage: 0
+--- !u!50 &1315489495
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1370264273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2309,7 +2477,8 @@ GameObject:
   - component: {fileID: 1507785499}
   - component: {fileID: 1507785500}
   - component: {fileID: 1507785501}
-  m_Layer: 0
+  - component: {fileID: 1507785502}
+  m_Layer: 8
   m_Name: turret3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2437,6 +2606,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.40625, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1507785502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507785498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
+  _shotsPerSecond: 2
+  _sweepDuration: 3
+  _damage: 1
+  _motion:
+    Speed: 3
+    Acceleration: 0
+    SpeedRange: {x: 0, y: 6}
+    AngularVelocity: 0
+    WaveAmplitude: 0
+    WaveFrequency: 0
 --- !u!1 &1643053185
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,10 +2785,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.WaveSpawner
   _enemyPrefab: {fileID: 7776611607430410508, guid: 64cae7c20d3a0db4e91f2dc43722a443, type: 3}
-  _waveSize: 8
-  _waveSizeIncrease: 2
-  _spawnRate: 4
+  _waveSize: 6
+  _waveSizeIncrease: 0
+  _spawnRate: 3
   _timeBetweenWaves: 2
+  _maxWaves: 8
   _startOnPlay: 1
   _targetCorner: 0
   _spawnOffset: 1

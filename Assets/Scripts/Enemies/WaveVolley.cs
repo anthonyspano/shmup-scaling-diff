@@ -44,9 +44,10 @@ namespace ScalingShmup.Enemies
             Vector2 aim = (Vector2)_target.position - (Vector2)leader.transform.position;
             float heading = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
 
+            // A leader that can't shoot still sets the direction for the rest of the line.
             foreach (Enemy enemy in wave)
             {
-                if (IsOnScreen(enemy.transform.position))
+                if (enemy.CanShoot && IsOnScreen(enemy.transform.position))
                 {
                     var damage = new DamageInfo(_damage, DamageType.EnemyFire, enemy.gameObject);
                     _projectilePool.Get().Launch(enemy.transform.position, heading, _motion, damage);

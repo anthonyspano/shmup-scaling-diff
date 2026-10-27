@@ -18,7 +18,14 @@ namespace ScalingShmup.Projectiles
                 CreateProjectile,
                 projectile => projectile.gameObject.SetActive(true),
                 projectile => projectile.gameObject.SetActive(false),
-                projectile => Destroy(projectile.gameObject),
+                // Unity clears pools when Play mode ends, after the scene has already destroyed them.
+                projectile =>
+                {
+                    if (projectile != null)
+                    {
+                        Destroy(projectile.gameObject);
+                    }
+                },
                 collectionCheck: false,
                 _defaultCapacity,
                 _maxSize);

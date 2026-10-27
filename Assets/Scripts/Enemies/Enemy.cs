@@ -11,6 +11,8 @@ namespace ScalingShmup.Enemies
     {
         [Tooltip("Destroy the object on death. When off it is deactivated so a spawner can reuse it.")]
         [SerializeField] private bool _destroyOnDeath = true;
+        [Tooltip("When off, this enemy never fires. Its movement is unaffected.")]
+        [SerializeField] private bool _canShoot = true;
 
         private Health _health;
 
@@ -22,6 +24,12 @@ namespace ScalingShmup.Enemies
         {
             get => _destroyOnDeath;
             set => _destroyOnDeath = value;
+        }
+
+        public bool CanShoot
+        {
+            get => _canShoot;
+            set => _canShoot = value;
         }
 
         private void Awake()

@@ -24,6 +24,8 @@ namespace ScalingShmup.Enemies
         [SerializeField, Min(0.1f)] private float _spawnRate = 4f;
         [Tooltip("Seconds from the last enemy of one wave spawning to the next wave starting.")]
         [SerializeField, Min(0f)] private float _timeBetweenWaves = 2f;
+        [Tooltip("No new waves spawn after this many. Waves already out keep making runs until defeated.")]
+        [SerializeField, Min(1)] private int _maxWaves = 8;
         [SerializeField] private bool _startOnPlay = true;
 
         [Header("Path")]
@@ -71,7 +73,14 @@ namespace ScalingShmup.Enemies
                 CreateEnemy,
                 actionOnGet: null,
                 actionOnRelease: enemy => enemy.gameObject.SetActive(false),
-                actionOnDestroy: enemy => Destroy(enemy.gameObject),
+                // Unity clears pools when Play mode ends, after the scene has already destroyed them.
+                actionOnDestroy: enemy =>
+                {
+                    if (enemy != null)
+                    {
+                        Destroy(enemy.gameObject);
+                    }
+                },
                 collectionCheck: false);
         }
 
@@ -118,7 +127,7 @@ namespace ScalingShmup.Enemies
 
         private IEnumerator StartWavesOnTimer()
         {
-            while (_isRunning)
+            while (_isRunning && CurrentWave < _maxWaves)
             {
                 CurrentWave++;
                 var wave = new List<Enemy>();
