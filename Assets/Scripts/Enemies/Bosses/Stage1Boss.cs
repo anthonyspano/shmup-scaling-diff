@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
 using UnityEngine;
@@ -8,11 +8,11 @@ namespace ScalingShmup.Enemies.Bosses
     // Stage 1 boss. Turrets spray for the whole fight; turrets above the boss's centre start their
     // sweep at the top-left corner and turrets below start at the bottom-left, so they mirror.
     // Set 1: rise from the middle to the top of the screen, then sweep top to bottom and back.
-    // Set 2 (health below the threshold): trace a figure 8, pause, trace it in reverse, pause, repeat.
+    // Set 2 (health below the threshold): any shot-down turrets revive at full health, then the boss
+    // traces a figure 8, pauses, traces it in reverse, pauses, and repeats.
     [RequireComponent(typeof(Health), typeof(Rigidbody2D))]
     public class Stage1Boss : MonoBehaviour
     {
-        [SerializeField] private ProjectilePool _projectilePool;
         [Tooltip("Defaults to Camera.main. Movement limits follow its view.")]
         [SerializeField] private Camera _camera;
 
@@ -34,6 +34,7 @@ namespace ScalingShmup.Enemies.Bosses
 
         private Health _health;
         private Rigidbody2D _rigidbody;
+        private BossTurret[] _turrets;
         private Coroutine _movement;
         private bool _inSetTwo;
 
@@ -73,10 +74,13 @@ namespace ScalingShmup.Enemies.Bosses
         {
             var owner = GetComponent<Enemy>();
 
-            foreach (BossTurret turret in GetComponentsInChildren<BossTurret>())
+            // Include inactive turrets: downed turrets are switched off, not destroyed, so they can revive.
+            _turrets = GetComponentsInChildren<BossTurret>(true);
+
+            foreach (BossTurret turret in _turrets)
             {
                 bool aboveCentre = turret.transform.position.y > transform.position.y;
-                turret.Configure(_projectilePool, owner, _camera, aboveCentre);
+                turret.Configure(owner, _camera, aboveCentre);
             }
         }
 
@@ -85,8 +89,28 @@ namespace ScalingShmup.Enemies.Bosses
             if (!_inSetTwo && current > 0f && current < max * _setTwoHealthFraction)
             {
                 _inSetTwo = true;
+                ReviveTurrets();
                 StopCoroutine(_movement);
                 _movement = StartCoroutine(SetTwoFigureEights());
+            }
+        }
+
+        // Turrets that were shot down come back at full health when set 2 starts.
+        private void ReviveTurrets()
+        {
+            foreach (BossTurret turret in _turrets)
+            {
+                if (turret == null || turret.gameObject.activeSelf)
+                {
+                    continue;
+                }
+
+                turret.gameObject.SetActive(true);
+
+                if (turret.TryGetComponent(out Health turretHealth))
+                {
+                    turretHealth.RestoreToFull();
+                }
             }
         }
 

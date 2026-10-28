@@ -1,4 +1,4 @@
-using ScalingShmup.Combat;
+﻿using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
 using UnityEngine;
 
@@ -13,17 +13,17 @@ namespace ScalingShmup.Enemies.Bosses
         [SerializeField, Min(0.1f)] private float _sweepDuration = 1.5f;
         [SerializeField, Min(0f)] private float _damage = 1f;
         [SerializeField] private ProjectileMotion _motion = ProjectileMotion.Straight(6f);
+        [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
+        [SerializeField] private GameObject _bulletPrefab;
 
-        private ProjectilePool _projectilePool;
         private Enemy _owner;
         private Camera _camera;
         private bool _startsAtTop;
         private float _sweepTime;
         private float _nextShotTime;
 
-        public void Configure(ProjectilePool projectilePool, Enemy owner, Camera viewCamera, bool startsAtTop)
+        public void Configure(Enemy owner, Camera viewCamera, bool startsAtTop)
         {
-            _projectilePool = projectilePool;
             _owner = owner;
             _camera = viewCamera;
             _startsAtTop = startsAtTop;
@@ -32,7 +32,7 @@ namespace ScalingShmup.Enemies.Bosses
 
         private void Update()
         {
-            if (_projectilePool == null || _camera == null)
+            if (_camera == null)
             {
                 return;
             }
@@ -44,9 +44,16 @@ namespace ScalingShmup.Enemies.Bosses
                 return;
             }
 
+            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+
+            if (pool == null)
+            {
+                return;
+            }
+
             _nextShotTime = Time.time + 1f / _shotsPerSecond;
             var damage = new DamageInfo(_damage, DamageType.EnemyFire, _owner != null ? _owner.gameObject : gameObject);
-            _projectilePool.Get().Launch(transform.position, CurrentHeading(), _motion, damage);
+            pool.Get().Launch(transform.position, CurrentHeading(), _motion, damage);
         }
 
         // 0 at the starting corner, 1 at the other, then back again.

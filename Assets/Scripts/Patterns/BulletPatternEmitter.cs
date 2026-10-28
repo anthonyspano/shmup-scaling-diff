@@ -8,7 +8,8 @@ namespace ScalingShmup.Patterns
     // Plays a sequence of BulletPatterns, firing projectiles from a shared pool.
     public class BulletPatternEmitter : MonoBehaviour
     {
-        [SerializeField] private ProjectilePool _projectilePool;
+        [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
+        [SerializeField] private GameObject _bulletPrefab;
         [SerializeField] private BulletPattern[] _patterns;
         [SerializeField] private bool _loop = true;
         [SerializeField] private bool _playOnEnable = true;
@@ -109,6 +110,13 @@ namespace ScalingShmup.Patterns
 
         private void FireBurst(BulletPattern pattern, int burst, float time)
         {
+            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+
+            if (pool == null)
+            {
+                return;
+            }
+
             Vector2 origin = _muzzle.position;
             float aimAngle = GetAimAngle(origin);
             ProjectileMotion motion = pattern.GetMotion(burst);
@@ -117,7 +125,7 @@ namespace ScalingShmup.Patterns
             for (int bullet = 0; bullet < pattern.BulletsPerBurst; bullet++)
             {
                 float heading = pattern.GetHeading(burst, bullet, time, aimAngle);
-                _projectilePool.Get().Launch(origin, heading, motion, damage);
+                pool.Get().Launch(origin, heading, motion, damage);
             }
         }
 

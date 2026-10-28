@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
 using UnityEngine;
@@ -9,7 +9,8 @@ namespace ScalingShmup.Enemies
     // other on-screen enemy in the wave fires along that same direction, so the shots are parallel.
     public class WaveVolley : MonoBehaviour
     {
-        [SerializeField] private ProjectilePool _projectilePool;
+        [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
+        [SerializeField] private GameObject _bulletPrefab;
         [Tooltip("Usually the player. When it is missing, enemies hold fire.")]
         [SerializeField] private Transform _target;
         [SerializeField, Min(0f)] private float _damage = 1f;
@@ -33,6 +34,13 @@ namespace ScalingShmup.Enemies
                 return;
             }
 
+            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+
+            if (pool == null)
+            {
+                return;
+            }
+
             Enemy leader = wave[0];
 
             // The volley is aimed by the front enemy, so it waits until that enemy is on screen.
@@ -50,7 +58,7 @@ namespace ScalingShmup.Enemies
                 if (enemy.CanShoot && IsOnScreen(enemy.transform.position))
                 {
                     var damage = new DamageInfo(_damage, DamageType.EnemyFire, enemy.gameObject);
-                    _projectilePool.Get().Launch(enemy.transform.position, heading, _motion, damage);
+                    pool.Get().Launch(enemy.transform.position, heading, _motion, damage);
                 }
             }
         }

@@ -57,6 +57,8 @@ namespace ScalingShmup.Enemies
 
         public event Action<int> WaveStarted;
         public event Action<int> WaveCleared;
+        // Raised once every one of the Max Waves waves has spawned and been defeated.
+        public event Action AllWavesDefeated;
 
         public int CurrentWave { get; private set; }
         public int ActiveWaveCount => _waves.Count;
@@ -188,6 +190,12 @@ namespace ScalingShmup.Enemies
 
             _waves.Remove(wave);
             WaveCleared?.Invoke(waveNumber);
+
+            // A wave is only removed after it has fully spawned, so this means the last one is done.
+            if (CurrentWave >= _maxWaves && _waves.Count == 0)
+            {
+                AllWavesDefeated?.Invoke();
+            }
         }
 
         private IEnumerator FireVolleys(List<Enemy> wave)

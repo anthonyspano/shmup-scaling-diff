@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using ScalingShmup.Combat;
 using UnityEngine;
 
@@ -7,6 +7,8 @@ namespace ScalingShmup.Projectiles
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class Projectile : MonoBehaviour
     {
+        [Tooltip("Bullet speed in units per second. Overrides the speed set by whatever fires it; 0 keeps the shooter's speed.")]
+        [SerializeField, Min(0f)] private float _speed = 0f;
         [SerializeField, Min(0.1f)] private float _lifetime = 5f;
         [SerializeField] private LayerMask _targetLayers;
         [Tooltip("Rotate the sprite to face its direction of travel.")]
@@ -19,7 +21,7 @@ namespace ScalingShmup.Projectiles
 
         private Vector2 _pathPosition;
         private float _headingDegrees;
-        private float _speed;
+        private float _currentSpeed;
         private float _age;
         private bool _isLive;
 
@@ -27,6 +29,13 @@ namespace ScalingShmup.Projectiles
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.bodyType = RigidbodyType2D.Kinematic;
+
+            // Hits are detected with OnTriggerEnter2D. A kinematic body with a solid collider gets
+            // no contacts at all against other kinematic bodies (like the boss), so force triggers.
+            foreach (Collider2D projectileCollider in GetComponents<Collider2D>())
+            {
+                projectileCollider.isTrigger = true;
+            }
         }
 
         public void SetReleaseAction(Action<Projectile> release)
@@ -35,13 +44,22 @@ namespace ScalingShmup.Projectiles
         }
 
         // headingDegrees: 0 points along +X, 90 along +Y (up the screen).
+        public float Speed => _speed;
+
         public void Launch(Vector2 position, float headingDegrees, ProjectileMotion motion, DamageInfo damage)
         {
+            if (_speed > 0f)
+            {
+                // The shooter's curve, wave and acceleration still apply; only the base speed changes.
+                motion.Speed = _speed;
+                motion.SpeedRange.y = Mathf.Max(motion.SpeedRange.y, _speed);
+            }
+
             _motion = motion;
             _damage = damage;
             _pathPosition = position;
             _headingDegrees = headingDegrees;
-            _speed = motion.Speed;
+            _currentSpeed = motion.Speed;
             _age = 0f;
             _isLive = true;
 
@@ -66,11 +84,11 @@ namespace ScalingShmup.Projectiles
                 return;
             }
 
-            _speed = ClampSpeed(_speed + _motion.Acceleration * deltaTime);
+            _currentSpeed = ClampSpeed(_currentSpeed + _motion.Acceleration * deltaTime);
             _headingDegrees += _motion.AngularVelocity * deltaTime;
 
             Vector2 heading = DirectionFromDegrees(_headingDegrees);
-            _pathPosition += heading * (_speed * deltaTime);
+            _pathPosition += heading * (_currentSpeed * deltaTime);
 
             // The wave is an offset from the path, so it never changes the bullet's overall course.
             Vector2 side = new Vector2(-heading.y, heading.x);

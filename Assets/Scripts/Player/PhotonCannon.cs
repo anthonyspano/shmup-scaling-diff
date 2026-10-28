@@ -1,4 +1,4 @@
-using ScalingShmup.Combat;
+﻿using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -9,7 +9,8 @@ namespace ScalingShmup.Player
     public class PhotonCannon : MonoBehaviour
     {
         [SerializeField] private InputActionReference _fireAction;
-        [SerializeField] private ProjectilePool _projectilePool;
+        [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
+        [SerializeField] private GameObject _bulletPrefab;
         [Tooltip("Each muzzle fires along its local up axis.")]
         [SerializeField] private Transform[] _muzzles;
         [SerializeField, Min(0.1f)] private float _shotsPerSecond = 8f;
@@ -34,12 +35,19 @@ namespace ScalingShmup.Player
 
         private void Fire()
         {
+            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+
+            if (pool == null)
+            {
+                return;
+            }
+
             var damage = new DamageInfo(_damage, DamageType.PhotonCannon, gameObject);
 
             foreach (Transform muzzle in _muzzles)
             {
                 float heading = Mathf.Atan2(muzzle.up.y, muzzle.up.x) * Mathf.Rad2Deg;
-                _projectilePool.Get().Launch(muzzle.position, heading, _motion, damage);
+                pool.Get().Launch(muzzle.position, heading, _motion, damage);
             }
         }
     }
