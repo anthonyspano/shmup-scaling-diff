@@ -16,8 +16,27 @@ namespace ScalingShmup.Player
         [SerializeField, Min(0.1f)] private float _shotsPerSecond = 8f;
         [SerializeField, Min(0f)] private float _damage = 1f;
         [SerializeField] private ProjectileMotion _motion = ProjectileMotion.Straight(20f);
+        [Tooltip("The normal shot pattern: one bullet per angle, in degrees from the ship's forward direction.")]
+        [SerializeField] private float[] _defaultShotAngles = { 0f };
 
+        private float[] _shotAngles;
         private float _nextShotTime;
+
+        private void Awake()
+        {
+            _shotAngles = _defaultShotAngles;
+        }
+
+        // Power-ups swap the shot pattern temporarily, then call ResetShotPattern.
+        public void SetShotAngles(float[] angles)
+        {
+            _shotAngles = angles != null && angles.Length > 0 ? angles : _defaultShotAngles;
+        }
+
+        public void ResetShotPattern()
+        {
+            _shotAngles = _defaultShotAngles;
+        }
 
         private void OnEnable()
         {
@@ -46,8 +65,12 @@ namespace ScalingShmup.Player
 
             foreach (Transform muzzle in _muzzles)
             {
-                float heading = Mathf.Atan2(muzzle.up.y, muzzle.up.x) * Mathf.Rad2Deg;
-                pool.Get().Launch(muzzle.position, heading, _motion, damage);
+                float forward = Mathf.Atan2(muzzle.up.y, muzzle.up.x) * Mathf.Rad2Deg;
+
+                foreach (float angle in _shotAngles)
+                {
+                    pool.Get().Launch(muzzle.position, forward + angle, _motion, damage);
+                }
             }
         }
     }
