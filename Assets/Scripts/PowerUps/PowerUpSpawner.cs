@@ -18,7 +18,7 @@ namespace ScalingShmup.PowerUps
 
         [Tooltip("One of these is picked at random for each spawn.")]
         [SerializeField] private GameObject[] _powerUpPrefabs;
-        [Tooltip("Chance of a spawn on each roll, from 0 (never) to 1 (every roll).")]
+        [Tooltip("Chance of a spawn on each roll, from 0 (never) to 1 (every roll). The value set here is the starting chance; in Play mode it shows the live chance as deaths raise it.")]
         [SerializeField, Range(0f, 1f)] private float _powerUpSpawnChance = 0.1f;
         [Tooltip("Added to the spawn chance each time the player dies. 0.25 adds 25 percentage points.")]
         [SerializeField, Range(0f, 1f)] private float _chanceIncreasePerDeath = 0.25f;
@@ -33,15 +33,20 @@ namespace ScalingShmup.PowerUps
         [Tooltip("Optional. Rolls only happen while the game is being played.")]
         [SerializeField] private GameManager _gameManager;
 
-        private float _currentChance;
+        // The starting chance from the scene, restored when the player wins.
+        private float _defaultChance;
         private int _deathsCounted;
 
-        // The chance used for rolls right now: the Inspector value plus any per-death increases.
-        public float CurrentSpawnChance => _currentChance;
+        public float CurrentSpawnChance => _powerUpSpawnChance;
 
         private void Awake()
         {
-            _currentChance = s_carriedChance ?? _powerUpSpawnChance;
+            _defaultChance = _powerUpSpawnChance;
+
+            if (s_carriedChance.HasValue)
+            {
+                _powerUpSpawnChance = s_carriedChance.Value;
+            }
 
             if (_camera == null)
             {
@@ -75,7 +80,7 @@ namespace ScalingShmup.PowerUps
             if (state == GameState.Victory)
             {
                 s_carriedChance = null;
-                _currentChance = _powerUpSpawnChance;
+                _powerUpSpawnChance = _defaultChance;
             }
         }
 
@@ -86,8 +91,8 @@ namespace ScalingShmup.PowerUps
             if (deathCount > _deathsCounted)
             {
                 int newDeaths = deathCount - _deathsCounted;
-                _currentChance = Mathf.Min(1f, _currentChance + newDeaths * _chanceIncreasePerDeath);
-                s_carriedChance = _currentChance;
+                _powerUpSpawnChance = Mathf.Min(1f, _powerUpSpawnChance + newDeaths * _chanceIncreasePerDeath);
+                s_carriedChance = _powerUpSpawnChance;
             }
 
             _deathsCounted = deathCount;
@@ -101,7 +106,7 @@ namespace ScalingShmup.PowerUps
 
                 bool playing = _gameManager == null || _gameManager.State == GameState.Playing;
 
-                if (playing && Random.value < _currentChance)
+                if (playing && Random.value < _powerUpSpawnChance)
                 {
                     Spawn();
                 }
