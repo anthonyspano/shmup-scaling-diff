@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 namespace ScalingShmup.Game
 {
-    // Owns the game flow (start, respawn, game over), the player's remaining lives and the
+    // Owns the game flow (start, respawn, game over, victory), the player's remaining lives and the
     // number of times the player has died.
     public class GameManager : MonoBehaviour
     {
@@ -21,6 +21,10 @@ namespace ScalingShmup.Game
         [Header("Game Over")]
         [Tooltip("Seconds between game over and the scene reloading to start a fresh game.")]
         [SerializeField, Min(0f)] private float _restartDelay = 5f;
+
+        [Header("Victory")]
+        [Tooltip("Seconds between winning and the scene reloading to start a fresh game.")]
+        [SerializeField, Min(0f)] private float _victoryRestartDelay = 6f;
 
         private Coroutine _respawnRoutine;
 
@@ -69,6 +73,25 @@ namespace ScalingShmup.Game
             SetState(GameState.Playing);
         }
 
+        // Called when the final boss is defeated. Later player deaths are ignored, since State
+        // is no longer Playing.
+        public void WinGame()
+        {
+            if (State != GameState.Playing && State != GameState.Respawning)
+            {
+                return;
+            }
+
+            if (_respawnRoutine != null)
+            {
+                StopCoroutine(_respawnRoutine);
+                _respawnRoutine = null;
+            }
+
+            SetState(GameState.Victory);
+            StartCoroutine(RestartAfterDelay(_victoryRestartDelay));
+        }
+
         public void AddLife()
         {
             if (State != GameState.GameOver)
@@ -97,14 +120,14 @@ namespace ScalingShmup.Game
                 _player.Died -= OnPlayerDied;
                 Destroy(_player.gameObject);
                 SetState(GameState.GameOver);
-                StartCoroutine(RestartAfterDelay());
+                StartCoroutine(RestartAfterDelay(_restartDelay));
             }
         }
 
         // Reloading the scene resets every system (waves, pools, HUD) to its starting state.
-        private IEnumerator RestartAfterDelay()
+        private IEnumerator RestartAfterDelay(float delay)
         {
-            yield return new WaitForSeconds(_restartDelay);
+            yield return new WaitForSeconds(delay);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 

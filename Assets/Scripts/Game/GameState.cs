@@ -1,4 +1,4 @@
-namespace ScalingShmup.Game
+﻿namespace ScalingShmup.Game
 {
     public enum GameState
     {
@@ -6,5 +6,6 @@ namespace ScalingShmup.Game
         Playing,
         Respawning,
         GameOver,
+        Victory,
     }
 }

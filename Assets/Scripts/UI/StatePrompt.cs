@@ -4,11 +4,14 @@ using UnityEngine;
 
 namespace ScalingShmup.UI
 {
-    // Shows the game over message for a few seconds when the GameManager reports game over.
-    public class GameOverPrompt : MonoBehaviour
+    // Shows a message (e.g. "Game Over!" or "You WIN!") for a few seconds when the GameManager
+    // enters a chosen state. Use one per message.
+    public class StatePrompt : MonoBehaviour
     {
         [SerializeField] private GameManager _gameManager;
-        [Tooltip("The object holding the \"Game Over!\" text. Hidden until game over.")]
+        [Tooltip("The game state that shows this prompt.")]
+        [SerializeField] private GameState _showOnState = GameState.GameOver;
+        [Tooltip("The object holding the message text. Hidden until the state is reached.")]
         [SerializeField] private GameObject _prompt;
         [SerializeField, Min(0f)] private float _duration = 5f;
 
@@ -38,7 +41,7 @@ namespace ScalingShmup.UI
 
         private void OnStateChanged(GameState state)
         {
-            if (state == GameState.GameOver && _prompt != null)
+            if (state == _showOnState && _prompt != null)
             {
                 StartCoroutine(ShowForDuration());
             }
