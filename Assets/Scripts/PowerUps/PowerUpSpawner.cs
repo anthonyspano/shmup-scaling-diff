@@ -1,17 +1,27 @@
-using System.Collections;
+﻿using System.Collections;
 using ScalingShmup.Game;
+using Unity.Scripting.LifecycleManagement;
 using UnityEngine;
 
 namespace ScalingShmup.PowerUps
 {
     // Every roll interval, rolls against a spawn chance; on a success it spawns a random power-up
-    // prefab at a random point in the left half of the screen.
-    public class PowerUpSpawner : MonoBehaviour
+    // prefab at a random point in the left half of the screen. Each player death raises the chance,
+    // capped at 100%, to help a struggling player. The raised chance carries over when a game over
+    // restarts the scene, and goes back to the Inspector value once the player wins.
+    // AutoStaticsCleanup clears the carried chance whenever Play mode starts.
+    [AutoStaticsCleanup]
+    public partial class PowerUpSpawner : MonoBehaviour
     {
+        // Survives scene reloads; null means "use the Inspector value".
+        private static float? s_carriedChance;
+
         [Tooltip("One of these is picked at random for each spawn.")]
         [SerializeField] private GameObject[] _powerUpPrefabs;
         [Tooltip("Chance of a spawn on each roll, from 0 (never) to 1 (every roll).")]
         [SerializeField, Range(0f, 1f)] private float _powerUpSpawnChance = 0.1f;
+        [Tooltip("Added to the spawn chance each time the player dies. 0.25 adds 25 percentage points.")]
+        [SerializeField, Range(0f, 1f)] private float _chanceIncreasePerDeath = 0.25f;
         [Tooltip("Seconds between rolls.")]
         [SerializeField, Min(0.1f)] private float _powerUpRollRate = 2f;
         [Tooltip("Keeps spawned power-ups this far inside the screen edges.")]
@@ -23,8 +33,16 @@ namespace ScalingShmup.PowerUps
         [Tooltip("Optional. Rolls only happen while the game is being played.")]
         [SerializeField] private GameManager _gameManager;
 
+        private float _currentChance;
+        private int _deathsCounted;
+
+        // The chance used for rolls right now: the Inspector value plus any per-death increases.
+        public float CurrentSpawnChance => _currentChance;
+
         private void Awake()
         {
+            _currentChance = s_carriedChance ?? _powerUpSpawnChance;
+
             if (_camera == null)
             {
                 _camera = Camera.main;
@@ -34,6 +52,45 @@ namespace ScalingShmup.PowerUps
         private void OnEnable()
         {
             StartCoroutine(RollLoop());
+
+            if (_gameManager != null)
+            {
+                _gameManager.DeathCountChanged += OnDeathCountChanged;
+                _gameManager.StateChanged += OnGameStateChanged;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (_gameManager != null)
+            {
+                _gameManager.DeathCountChanged -= OnDeathCountChanged;
+                _gameManager.StateChanged -= OnGameStateChanged;
+            }
+        }
+
+        // Winning ends the run, so the next game starts back at the normal chance.
+        private void OnGameStateChanged(GameState state)
+        {
+            if (state == GameState.Victory)
+            {
+                s_carriedChance = null;
+                _currentChance = _powerUpSpawnChance;
+            }
+        }
+
+        // DeathCountChanged also fires when the count is reset to 0 at the start of a game, so only
+        // count increases.
+        private void OnDeathCountChanged(int deathCount)
+        {
+            if (deathCount > _deathsCounted)
+            {
+                int newDeaths = deathCount - _deathsCounted;
+                _currentChance = Mathf.Min(1f, _currentChance + newDeaths * _chanceIncreasePerDeath);
+                s_carriedChance = _currentChance;
+            }
+
+            _deathsCounted = deathCount;
         }
 
         private IEnumerator RollLoop()
@@ -44,7 +101,7 @@ namespace ScalingShmup.PowerUps
 
                 bool playing = _gameManager == null || _gameManager.State == GameState.Playing;
 
-                if (playing && Random.value < _powerUpSpawnChance)
+                if (playing && Random.value < _currentChance)
                 {
                     Spawn();
                 }
