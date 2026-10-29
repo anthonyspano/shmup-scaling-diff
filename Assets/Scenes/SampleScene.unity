@@ -3470,7 +3470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1259004639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4733,7 +4733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1590317438
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4981,7 +4981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1637264862
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5404,7 +5404,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1655199956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5521,7 +5521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1692369049
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5723,7 +5723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.13
+    _volume: 0.5
 --- !u!82 &1695639902
 AudioSource:
   m_ObjectHideFlags: 0
