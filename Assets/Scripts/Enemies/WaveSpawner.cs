@@ -38,10 +38,8 @@ namespace ScalingShmup.Enemies
         [SerializeField, Min(0f)] private float _delayBetweenRuns = 1.5f;
 
         [Header("Shooting")]
-        [Tooltip("Optional. Fires each wave's volleys while it is on screen.")]
+        [Tooltip("Optional. Each enemy fires once per run, as soon as it is fully on screen.")]
         [SerializeField] private WaveVolley _volley;
-        [Tooltip("Seconds between volleys from the same wave.")]
-        [SerializeField, Min(0.1f)] private float _volleyInterval = 2f;
 
         [Header("References")]
         [Tooltip("Defaults to Camera.main. Spawn points and corners follow its view.")]
@@ -136,13 +134,14 @@ namespace ScalingShmup.Enemies
                 _waves.Add(wave);
                 WaveStarted?.Invoke(CurrentWave);
 
-                yield return SpawnWave(wave, CurrentWave);
-                StartCoroutine(RepeatRuns(wave, CurrentWave));
-
+                // Watch from the first spawn, so the front enemies fire the moment they're fully in view.
                 if (_volley != null)
                 {
-                    StartCoroutine(FireVolleys(wave));
+                    StartCoroutine(WatchForShots(wave));
                 }
+
+                yield return SpawnWave(wave, CurrentWave);
+                StartCoroutine(RepeatRuns(wave, CurrentWave));
 
                 yield return new WaitForSeconds(_timeBetweenWaves);
             }
@@ -198,15 +197,17 @@ namespace ScalingShmup.Enemies
             }
         }
 
-        private IEnumerator FireVolleys(List<Enemy> wave)
+        private IEnumerator WatchForShots(List<Enemy> wave)
         {
-            var wait = new WaitForSeconds(_volleyInterval);
+            _volley.StartRun(wave);
 
-            while (wave.Count > 0)
+            while (_waves.Contains(wave))
             {
-                yield return wait;
-                _volley.Fire(wave);
+                _volley.UpdateWave(wave);
+                yield return null;
             }
+
+            _volley.EndWave(wave);
         }
 
         // Survivors keep their order in the line, so the formation is the same on every run.
@@ -215,6 +216,11 @@ namespace ScalingShmup.Enemies
             float startAlong = UnityEngine.Random.Range(-0.5f, 0.5f) * _spawnHeightRange;
             float targetAlong = UnityEngine.Random.Range(-0.5f, 0.5f);
             var survivors = new List<Enemy>(wave);
+
+            if (_volley != null)
+            {
+                _volley.StartRun(wave);
+            }
 
             foreach (Enemy enemy in survivors)
             {

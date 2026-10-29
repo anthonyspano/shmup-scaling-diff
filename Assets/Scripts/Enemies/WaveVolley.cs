@@ -5,8 +5,9 @@ using UnityEngine;
 
 namespace ScalingShmup.Enemies
 {
-    // Fires one volley for a wave: the enemy at the front of the line aims at the player, and every
-    // other on-screen enemy in the wave fires along that same direction, so the shots are parallel.
+    // Wave shooting: on each run across the screen, every enemy fires once, the moment its sprite is
+    // fully inside the camera's view. The first enemy of the run to get fully on screen aims at the
+    // player, and the rest of the line fire along that same direction, so the shots are parallel.
     public class WaveVolley : MonoBehaviour
     {
         [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
@@ -15,8 +16,17 @@ namespace ScalingShmup.Enemies
         [SerializeField] private Transform _target;
         [SerializeField, Min(0f)] private float _damage = 1f;
         [SerializeField] private ProjectileMotion _motion = ProjectileMotion.Straight(6f);
-        [Tooltip("Defaults to Camera.main. Only enemies inside its view fire.")]
+        [Tooltip("Defaults to Camera.main. Enemies fire once their sprite is fully inside its view.")]
         [SerializeField] private Camera _camera;
+
+        // Per wave: who has already fired this run, and the run's shared heading once it is set.
+        private readonly Dictionary<IReadOnlyList<Enemy>, RunState> _runs = new Dictionary<IReadOnlyList<Enemy>, RunState>();
+
+        private class RunState
+        {
+            public readonly HashSet<Enemy> Fired = new HashSet<Enemy>();
+            public float? Heading;
+        }
 
         private void Awake()
         {
@@ -26,53 +36,85 @@ namespace ScalingShmup.Enemies
             }
         }
 
-        // wave is in line order; index 0 is the front of the line.
-        public void Fire(IReadOnlyList<Enemy> wave)
+        // Call when a wave starts a new run, so every enemy gets to fire again.
+        public void StartRun(IReadOnlyList<Enemy> wave)
         {
-            if (_target == null || !_target.gameObject.activeInHierarchy || wave.Count == 0)
+            _runs[wave] = new RunState();
+        }
+
+        public void EndWave(IReadOnlyList<Enemy> wave)
+        {
+            _runs.Remove(wave);
+        }
+
+        // Call every frame while the wave is alive. Fires for each enemy that has just come fully on screen.
+        public void UpdateWave(IReadOnlyList<Enemy> wave)
+        {
+            if (!_runs.TryGetValue(wave, out RunState run))
             {
-                return;
+                run = new RunState();
+                _runs[wave] = run;
             }
 
-            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+            bool hasTarget = _target != null && _target.gameObject.activeInHierarchy;
 
-            if (pool == null)
-            {
-                return;
-            }
-
-            Enemy leader = wave[0];
-
-            // The volley is aimed by the front enemy, so it waits until that enemy is on screen.
-            if (!IsOnScreen(leader.transform.position))
-            {
-                return;
-            }
-
-            Vector2 aim = (Vector2)_target.position - (Vector2)leader.transform.position;
-            float heading = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
-
-            // A leader that can't shoot still sets the direction for the rest of the line.
             foreach (Enemy enemy in wave)
             {
-                if (enemy.CanShoot && IsOnScreen(enemy.transform.position))
+                if (run.Fired.Contains(enemy) || !IsFullyOnScreen(enemy))
                 {
-                    var damage = new DamageInfo(_damage, DamageType.EnemyFire, enemy.gameObject);
-                    pool.Get().Launch(enemy.transform.position, heading, _motion, damage);
+                    continue;
+                }
+
+                if (!run.Heading.HasValue)
+                {
+                    // Without a target, wait rather than fire in an arbitrary direction.
+                    if (!hasTarget)
+                    {
+                        return;
+                    }
+
+                    Vector2 aim = (Vector2)_target.position - (Vector2)enemy.transform.position;
+                    run.Heading = Mathf.Atan2(aim.y, aim.x) * Mathf.Rad2Deg;
+                }
+
+                run.Fired.Add(enemy);
+
+                // An enemy that can't shoot still counts as having had its turn (and can set the aim).
+                if (enemy.CanShoot)
+                {
+                    Fire(enemy, run.Heading.Value);
                 }
             }
         }
 
-        private bool IsOnScreen(Vector2 position)
+        private void Fire(Enemy enemy, float heading)
+        {
+            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+
+            if (pool != null)
+            {
+                var damage = new DamageInfo(_damage, DamageType.EnemyFire, enemy.gameObject);
+                pool.Get().Launch(enemy.transform.position, heading, _motion, damage);
+            }
+        }
+
+        private bool IsFullyOnScreen(Enemy enemy)
         {
             if (_camera == null || !_camera.orthographic)
             {
                 return true;
             }
 
-            Vector2 offset = position - (Vector2)_camera.transform.position;
-            return Mathf.Abs(offset.x) <= _camera.orthographicSize * _camera.aspect
-                && Mathf.Abs(offset.y) <= _camera.orthographicSize;
+            Bounds bounds = enemy.TryGetComponent(out SpriteRenderer sprite)
+                ? sprite.bounds
+                : new Bounds(enemy.transform.position, Vector3.zero);
+
+            Vector2 centre = _camera.transform.position;
+            float halfHeight = _camera.orthographicSize;
+            float halfWidth = halfHeight * _camera.aspect;
+
+            return bounds.min.x >= centre.x - halfWidth && bounds.max.x <= centre.x + halfWidth
+                && bounds.min.y >= centre.y - halfHeight && bounds.max.y <= centre.y + halfHeight;
         }
     }
 }
