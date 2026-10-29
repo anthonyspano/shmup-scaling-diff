@@ -20,11 +20,31 @@ namespace ScalingShmup.Player
         [SerializeField] private float[] _defaultShotAngles = { 0f };
 
         private float[] _shotAngles;
+        private GameObject _activeBulletPrefab;
+        private float _activeShotsPerSecond;
         private float _nextShotTime;
+
+        // Raised for every bullet fired, so power-ups can adjust their own bullets (e.g. firework range).
+        public event System.Action<Projectile> Fired;
 
         private void Awake()
         {
             _shotAngles = _defaultShotAngles;
+            _activeBulletPrefab = _bulletPrefab;
+            _activeShotsPerSecond = _shotsPerSecond;
+        }
+
+        // Power-ups swap the bullet (and its fire rate) temporarily, then call ResetBullet.
+        public void SetBullet(GameObject bulletPrefab, float shotsPerSecond)
+        {
+            _activeBulletPrefab = bulletPrefab != null ? bulletPrefab : _bulletPrefab;
+            _activeShotsPerSecond = shotsPerSecond > 0f ? shotsPerSecond : _shotsPerSecond;
+        }
+
+        public void ResetBullet()
+        {
+            _activeBulletPrefab = _bulletPrefab;
+            _activeShotsPerSecond = _shotsPerSecond;
         }
 
         // Power-ups swap the shot pattern temporarily, then call ResetShotPattern.
@@ -48,13 +68,13 @@ namespace ScalingShmup.Player
             if (_fireAction.action.IsPressed() && Time.time >= _nextShotTime)
             {
                 Fire();
-                _nextShotTime = Time.time + 1f / _shotsPerSecond;
+                _nextShotTime = Time.time + 1f / _activeShotsPerSecond;
             }
         }
 
         private void Fire()
         {
-            ProjectilePool pool = ProjectilePool.ForPrefab(_bulletPrefab);
+            ProjectilePool pool = ProjectilePool.ForPrefab(_activeBulletPrefab);
 
             if (pool == null)
             {
@@ -69,7 +89,9 @@ namespace ScalingShmup.Player
 
                 foreach (float angle in _shotAngles)
                 {
-                    pool.Get().Launch(muzzle.position, forward + angle, _motion, damage);
+                    Projectile bullet = pool.Get();
+                    bullet.Launch(muzzle.position, forward + angle, _motion, damage);
+                    Fired?.Invoke(bullet);
                 }
             }
         }

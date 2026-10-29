@@ -2424,8 +2424,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.PowerUps.PowerUpSpawner
   _powerUpPrefabs:
   - {fileID: 5318778091175562733, guid: dc91810117f7a4049a5f5b7de7e1eb10, type: 3}
+  - {fileID: 6938986617052644488, guid: 62ae3365ed2ee414aa755c1215c6407c, type: 3}
   _powerUpSpawnChance: 0.1
-  _powerUpRollRate: 2
+  _chanceIncreasePerDeath: 0.1
+  _powerUpRollRate: 4
   _screenMargin: 0.75
   _camera: {fileID: 0}
   _gameManager: {fileID: 1260761147}
@@ -2455,6 +2457,7 @@ GameObject:
   - component: {fileID: 1214143388}
   - component: {fileID: 1214143389}
   - component: {fileID: 1214143390}
+  - component: {fileID: 1214143391}
   m_Layer: 0
   m_Name: nebula
   m_TagString: Untagged
@@ -2553,6 +2556,25 @@ MonoBehaviour:
   _speed: 0.6
   _overlap: 0.0001
   _camera: {fileID: 0}
+--- !u!114 &1214143391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214143387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2882c13127a3f6a4aa09af6ffd4fce30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Environment.SpriteColorCycle
+  _colors:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.4392157, g: 0.90588236, b: 1, a: 1}
+  - {r: 1, g: 0.504717, b: 0.504717, a: 1}
+  - {r: 0.99215686, g: 0.68235296, b: 0.4627451, a: 1}
+  _interval: 10
+  _transitionDuration: 0
 --- !u!1 &1260761146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,7 +3622,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6775645778174918573, guid: a9643ab8249ad9347883a9fd5ddeed90, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5254902}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3619,7 +3641,7 @@ Transform:
   m_GameObject: {fileID: 1643053185}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.04, y: -0.17, z: 0}
+  m_LocalPosition: {x: 0, y: -0.17, z: 0}
   m_LocalScale: {x: 1.1111109, y: 1.1111109, z: 1.1111112}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3642,6 +3664,7 @@ MonoBehaviour:
   strobeSpeed: 10
   isStrobeEnabled: 1
   repeatedLoops: 3
+  maxAlpha: 0.525
   pause: 0.05
 --- !u!1 &1692669333
 GameObject:

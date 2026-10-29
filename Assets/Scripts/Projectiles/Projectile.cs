@@ -23,7 +23,16 @@ namespace ScalingShmup.Projectiles
         private float _headingDegrees;
         private float _currentSpeed;
         private float _age;
+        private float _distanceTravelled;
         private bool _isLive;
+
+        // Raised as the projectile is removed. The bool is true when it was removed by hitting a target.
+        public event Action<Projectile, bool> Expired;
+
+        public DamageInfo Damage => _damage;
+        public float HeadingDegrees => _headingDegrees;
+        public float DistanceTravelled => _distanceTravelled;
+        public bool IsLive => _isLive;
 
         private void Awake()
         {
@@ -61,6 +70,7 @@ namespace ScalingShmup.Projectiles
             _headingDegrees = headingDegrees;
             _currentSpeed = motion.Speed;
             _age = 0f;
+            _distanceTravelled = 0f;
             _isLive = true;
 
             transform.position = position;
@@ -89,6 +99,7 @@ namespace ScalingShmup.Projectiles
 
             Vector2 heading = DirectionFromDegrees(_headingDegrees);
             _pathPosition += heading * (_currentSpeed * deltaTime);
+            _distanceTravelled += _currentSpeed * deltaTime;
 
             // The wave is an offset from the path, so it never changes the bullet's overall course.
             Vector2 side = new Vector2(-heading.y, heading.x);
@@ -116,7 +127,7 @@ namespace ScalingShmup.Projectiles
             if (target != null && target.IsAlive)
             {
                 target.TakeDamage(_damage);
-                Despawn();
+                Despawn(hitTarget: true);
             }
         }
 
@@ -141,9 +152,16 @@ namespace ScalingShmup.Projectiles
             }
         }
 
-        private void Despawn()
+        // Removes the projectile now, e.g. when a firework shell reaches its range and bursts.
+        public void Despawn(bool hitTarget = false)
         {
+            if (!_isLive)
+            {
+                return;
+            }
+
             _isLive = false;
+            Expired?.Invoke(this, hitTarget);
 
             if (_release != null)
             {

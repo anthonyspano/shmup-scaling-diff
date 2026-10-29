@@ -13,6 +13,8 @@ public class StrobeAlpha : MonoBehaviour
     public bool isStrobeEnabled = true;
     public int repeatedLoops;
 
+    public float maxAlpha;
+
     void Awake()
     {
         if(playerHitEvents == null)
@@ -42,10 +44,8 @@ public class StrobeAlpha : MonoBehaviour
     {
         isStrobeEnabled = true;
         renderer = GetComponent<Renderer>();
-        // Keep the material assigned in the Inspector. Resources.Load found no "ChangeAlpha"
-        // material (there is no Resources folder), so it set the material to null and the
-        // barrier rendered magenta in Play mode. (next line)
-        // renderer.material = Resources.Load<Material>("ChangeAlpha");
+
+        renderer.material.SetFloat("_Alpha", maxAlpha);
     }
 
     // Subscribed to PlayerHitEvents.PlayerHit in OnEnable.
@@ -71,17 +71,17 @@ public class StrobeAlpha : MonoBehaviour
         }
 
         // Leave the barrier fully visible once the strobe ends.
-        renderer.material.SetFloat("_Alpha", 1f);
+        renderer.material.SetFloat("_Alpha", maxAlpha);
     }
 
     IEnumerator StrobeOn()
     {
         float currentAlpha = renderer.material.GetFloat("_Alpha");
-        while(currentAlpha < 1f)
+        while(currentAlpha < maxAlpha)
         {
             if(isStrobeEnabled)
             {
-                currentAlpha = Mathf.Min(1f, currentAlpha + Time.deltaTime * strobeSpeed);
+                currentAlpha = Mathf.Min(maxAlpha, currentAlpha + Time.deltaTime * strobeSpeed);
                 renderer.material.SetFloat("_Alpha", currentAlpha);
             }
             yield return null;    
