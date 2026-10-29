@@ -12,6 +12,7 @@ namespace ScalingShmup.Audio
         [SerializeField, Range(0f, 1f)] private float _volume = 1f;
 
         public AudioClip Clip => _clip;
+        public float Volume => _volume;
 
         public void Play()
         {

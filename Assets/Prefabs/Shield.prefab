@@ -145,6 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.PowerUps.ShieldPowerUp
   _duration: 8
+  _pickupSound:
+    _clip: {fileID: 8300000, guid: 36f40e0180419e243b37208216f4cb46, type: 3}
+    _volume: 1
   _lifetime: 12
   _blinkTime: 3
   _blinkRate: 1.5

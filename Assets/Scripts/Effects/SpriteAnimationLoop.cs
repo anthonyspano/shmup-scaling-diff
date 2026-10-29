@@ -34,6 +34,10 @@ namespace ScalingShmup.Effects
 
         private void OnDisable()
         {
+            // Disabling the component (not the GameObject) keeps coroutines running, so stop the loop
+            // before its playable is destroyed.
+            StopAllCoroutines();
+
             if (_graph.IsValid())
             {
                 _graph.Destroy();

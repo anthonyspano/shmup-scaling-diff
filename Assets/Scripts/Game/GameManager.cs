@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using ScalingShmup.Audio;
 using ScalingShmup.Combat;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,8 @@ namespace ScalingShmup.Game
         [SerializeField, Min(0f)] private float _respawnDelay = 1.5f;
         [SerializeField, Min(0f)] private float _respawnInvulnerability = 2f;
         [SerializeField] private bool _startAutomatically = true;
+        [Tooltip("Plays the background music. Defaults to the MusicPlayer on this object.")]
+        [SerializeField] private MusicPlayer _music;
 
         [Header("Game Over")]
         [Tooltip("Seconds between game over and the scene reloading to start a fresh game.")]
@@ -36,6 +39,14 @@ namespace ScalingShmup.Game
         public int Lives { get; private set; }
         public int DeathCount { get; private set; }
         public float RestartDelay => _restartDelay;
+
+        private void Awake()
+        {
+            if (_music == null)
+            {
+                _music = GetComponent<MusicPlayer>();
+            }
+        }
 
         private void Start()
         {
@@ -88,8 +99,23 @@ namespace ScalingShmup.Game
                 _respawnRoutine = null;
             }
 
+            // The boss theme loops until here.
+            if (_music != null)
+            {
+                _music.Stop();
+            }
+
             SetState(GameState.Victory);
             StartCoroutine(RestartAfterDelay(_victoryRestartDelay));
+        }
+
+        // Swaps the background music, e.g. to the boss theme. The new track loops.
+        public void ChangeTrack(AudioClip track)
+        {
+            if (_music != null)
+            {
+                _music.ChangeTrack(track, true);
+            }
         }
 
         public void AddLife()
