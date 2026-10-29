@@ -28,6 +28,7 @@ namespace ScalingShmup.Enemies
 
         // False once the enemy has crossed the screen and left it, until it is launched again.
         public bool IsMoving => _isMoving;
+        public float Speed => _speed;
 
         private void Awake()
         {

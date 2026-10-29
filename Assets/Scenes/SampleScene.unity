@@ -767,6 +767,7 @@ GameObject:
   - component: {fileID: 318751511}
   - component: {fileID: 318751515}
   - component: {fileID: 318751516}
+  - component: {fileID: 318751517}
   m_Layer: 0
   m_Name: HUD
   m_TagString: Untagged
@@ -854,6 +855,7 @@ RectTransform:
   - {fileID: 1370264274}
   - {fileID: 1500848123}
   - {fileID: 1739375271}
+  - {fileID: 1204470708}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -893,6 +895,21 @@ MonoBehaviour:
   _showOnState: 4
   _prompt: {fileID: 1739375267}
   _duration: 6
+--- !u!114 &318751517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318751510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edeb4ea9d632204b82e79077f0ce92f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.UI.IncomingPrompt
+  _waveSpawner: {fileID: 1692669335}
+  _prompt: {fileID: 1204470704}
+  _flashRate: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,6 +2003,7 @@ GameObject:
   - component: {fileID: 1057350971}
   - component: {fileID: 1057350972}
   - component: {fileID: 1057350973}
+  - component: {fileID: 1057350974}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2183,7 +2201,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 6084246499542217133, guid: 492fad60f08b0bc42b45c8b91e6edce6, type: 3}
   _muzzles:
   - {fileID: 139485188}
-  _shotsPerSecond: 8
+  _shotsPerSecond: 6
   _damage: 1
   _motion:
     Speed: 20
@@ -2201,7 +2219,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057350961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ef22d0e8ce744344b373d43808e75d8, type: 3}
   m_Name: 
@@ -2267,6 +2285,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06cd49b550e66ac48b8301c11e85fa6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.PowerUps.PlayerPowerUps
+--- !u!114 &1057350974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057350961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89548014e41333c4993257e756cb04ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Player.PlayerShipSkin
 --- !u!1001 &1110608191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2447,6 +2477,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1204470704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204470708}
+  - component: {fileID: 1204470707}
+  - component: {fileID: 1204470706}
+  - component: {fileID: 1204470705}
+  m_Layer: 0
+  m_Name: IncomingText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1204470705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204470704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Outline
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.8}
+  m_EffectDistance: {x: 4, y: -4}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1204470706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204470704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.35, b: 0.3, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 75
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 120
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Enemies Incoming!
+--- !u!222 &1204470707
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204470704}
+  m_CullTransparentMesh: 1
+--- !u!224 &1204470708
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204470704}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 318751514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1214143387
 GameObject:
   m_ObjectHideFlags: 0
@@ -3719,12 +3845,14 @@ MonoBehaviour:
   _timeBetweenWaves: 2
   _maxWaves: 8
   _startOnPlay: 1
+  _firstWaveDelay: 5
   _targetCorner: 0
   _spawnOffset: 1
   _spawnHeightRange: 0.6
   _delayBetweenRuns: 1.5
+  _edgeWarningPrefab: {fileID: 363186798760482787, guid: 1f5a525d7ddcc924cbb68f3f840de0eb, type: 3}
+  _warningLeadTime: 1
   _volley: {fileID: 1692669336}
-  _volleyInterval: 2
   _camera: {fileID: 0}
   _gameManager: {fileID: 1260761147}
 --- !u!114 &1692669336

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScalingShmup.Effects;
 using ScalingShmup.Game;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -27,6 +28,8 @@ namespace ScalingShmup.Enemies
         [Tooltip("No new waves spawn after this many. Waves already out keep making runs until defeated.")]
         [SerializeField, Min(1)] private int _maxWaves = 8;
         [SerializeField] private bool _startOnPlay = true;
+        [Tooltip("Seconds of warning (the \"Enemies Incoming!\" prompt) before the first wave spawns.")]
+        [SerializeField, Min(0f)] private float _firstWaveDelay = 5f;
 
         [Header("Path")]
         [SerializeField] private WaveTargetCorner _targetCorner = WaveTargetCorner.Random;
@@ -36,6 +39,12 @@ namespace ScalingShmup.Enemies
         [SerializeField, Range(0f, 1f)] private float _spawnHeightRange = 0.6f;
         [Tooltip("Seconds survivors wait off screen between one run and the next.")]
         [SerializeField, Min(0f)] private float _delayBetweenRuns = 1.5f;
+
+        [Header("Entry warning")]
+        [Tooltip("Optional. Flashing marker shown on the screen edge where each run is about to enter.")]
+        [SerializeField] private EdgeWarning _edgeWarningPrefab;
+        [Tooltip("Seconds the warning shows before the first ship of a run starts to appear on screen.")]
+        [SerializeField, Min(0f)] private float _warningLeadTime = 1f;
 
         [Header("Shooting")]
         [Tooltip("Optional. Each enemy fires once per run, as soon as it is fully on screen.")]
@@ -50,11 +59,14 @@ namespace ScalingShmup.Enemies
         // Each wave's living enemies, in line order. The front of the line is index 0.
         private readonly List<List<Enemy>> _waves = new List<List<Enemy>>();
         private readonly Dictionary<Enemy, List<Enemy>> _waveOf = new Dictionary<Enemy, List<Enemy>>();
+        private readonly List<EdgeWarning> _warnings = new List<EdgeWarning>();
         private ObjectPool<Enemy> _pool;
         private bool _isRunning;
 
         public event Action<int> WaveStarted;
         public event Action<int> WaveCleared;
+        // Raised when waves are started, with the seconds left before the first one spawns.
+        public event Action<float> FirstWaveIncoming;
         // Raised once every one of the Max Waves waves has spawned and been defeated.
         public event Action AllWavesDefeated;
 
@@ -127,6 +139,12 @@ namespace ScalingShmup.Enemies
 
         private IEnumerator StartWavesOnTimer()
         {
+            if (_firstWaveDelay > 0f)
+            {
+                FirstWaveIncoming?.Invoke(_firstWaveDelay);
+                yield return new WaitForSeconds(_firstWaveDelay);
+            }
+
             while (_isRunning && CurrentWave < _maxWaves)
             {
                 CurrentWave++;
@@ -153,6 +171,8 @@ namespace ScalingShmup.Enemies
             int size = _waveSize + (waveNumber - 1) * _waveSizeIncrease;
             bool towardTop = PickTopCorner(waveNumber);
             float startAlong = UnityEngine.Random.Range(-0.5f, 0.5f) * _spawnHeightRange;
+
+            yield return WarnBeforeEntry(ScreenEdge.Right, GetEdgePoint(ScreenEdge.Right, startAlong, _spawnOffset), GetCorner(towardTop));
 
             for (int i = 0; i < size; i++)
             {
@@ -217,6 +237,8 @@ namespace ScalingShmup.Enemies
             float targetAlong = UnityEngine.Random.Range(-0.5f, 0.5f);
             var survivors = new List<Enemy>(wave);
 
+            yield return WarnBeforeEntry(fromEdge, GetEdgePoint(fromEdge, startAlong, _spawnOffset), GetEdgePoint(Opposite(fromEdge), targetAlong, 0f));
+
             if (_volley != null)
             {
                 _volley.StartRun(wave);
@@ -236,6 +258,77 @@ namespace ScalingShmup.Enemies
                 }
 
                 yield return spawnDelay;
+            }
+        }
+
+        // Shows the edge warning where the run's first ship will cross into view, then holds the run
+        // back so that ship starts to appear Warning Lead Time seconds after the warning appears.
+        private IEnumerator WarnBeforeEntry(ScreenEdge edge, Vector2 start, Vector2 target)
+        {
+            if (_edgeWarningPrefab == null || _warningLeadTime <= 0f)
+            {
+                yield break;
+            }
+
+            Vector2 direction = (target - start).normalized;
+            GetView(out Vector2 centre, out Vector2 halfSize);
+            Vector2 inward = InwardNormal(edge);
+
+            // Distance along the path until the ship's centre reaches the edge line.
+            float distanceFromEdge = edge == ScreenEdge.Left || edge == ScreenEdge.Right
+                ? Mathf.Abs(start.x - (centre.x - inward.x * halfSize.x))
+                : Mathf.Abs(start.y - (centre.y - inward.y * halfSize.y));
+            float speedTowardScreen = Mathf.Max(0.01f, Vector2.Dot(direction, inward));
+            float centreDistance = distanceFromEdge / speedTowardScreen;
+            Vector2 crossing = start + direction * centreDistance;
+
+            // The ship shows up as soon as its leading edge crosses, half a sprite before its centre.
+            float leadingEdgeDistance = Mathf.Max(0f, centreDistance - EnemyHalfSize() / speedTowardScreen);
+            float travelTime = leadingEdgeDistance / Mathf.Max(0.01f, EnemySpeed());
+
+            GetWarning().Show(crossing, inward, _warningLeadTime);
+            yield return new WaitForSeconds(Mathf.Max(0f, _warningLeadTime - travelTime));
+        }
+
+        private EdgeWarning GetWarning()
+        {
+            foreach (EdgeWarning warning in _warnings)
+            {
+                if (!warning.gameObject.activeSelf)
+                {
+                    return warning;
+                }
+            }
+
+            EdgeWarning created = Instantiate(_edgeWarningPrefab, transform);
+            _warnings.Add(created);
+            return created;
+        }
+
+        private float EnemySpeed()
+        {
+            return _enemyPrefab.TryGetComponent(out EnemyLineMover mover) ? mover.Speed : 4f;
+        }
+
+        private float EnemyHalfSize()
+        {
+            return _enemyPrefab.TryGetComponent(out SpriteRenderer sprite) && sprite.sprite != null
+                ? Mathf.Max(sprite.sprite.bounds.extents.x, sprite.sprite.bounds.extents.y) * _enemyPrefab.transform.localScale.x
+                : 0f;
+        }
+
+        private static Vector2 InwardNormal(ScreenEdge edge)
+        {
+            switch (edge)
+            {
+                case ScreenEdge.Left:
+                    return Vector2.right;
+                case ScreenEdge.Right:
+                    return Vector2.left;
+                case ScreenEdge.Top:
+                    return Vector2.down;
+                default:
+                    return Vector2.up;
             }
         }
 
