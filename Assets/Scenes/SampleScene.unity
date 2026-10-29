@@ -2425,6 +2425,7 @@ MonoBehaviour:
   _powerUpPrefabs:
   - {fileID: 5318778091175562733, guid: dc91810117f7a4049a5f5b7de7e1eb10, type: 3}
   - {fileID: 6938986617052644488, guid: 62ae3365ed2ee414aa755c1215c6407c, type: 3}
+  - {fileID: 1628898608201183199, guid: b3c3c480e7b54d14bb3a628a22cbb459, type: 3}
   _powerUpSpawnChance: 0.1
   _chanceIncreasePerDeath: 0.1
   _powerUpRollRate: 4
@@ -2574,7 +2575,7 @@ MonoBehaviour:
   - {r: 1, g: 0.504717, b: 0.504717, a: 1}
   - {r: 0.99215686, g: 0.68235296, b: 0.4627451, a: 1}
   _interval: 10
-  _transitionDuration: 0
+  _transitionDuration: 3
 --- !u!1 &1260761146
 GameObject:
   m_ObjectHideFlags: 0

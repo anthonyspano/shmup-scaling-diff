@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace ScalingShmup.Combat
@@ -87,6 +87,14 @@ namespace ScalingShmup.Combat
             SetHealth(_maxHealth);
             SetOvershield(_maxOvershield);
             Restored?.Invoke(this);
+        }
+
+        // Adds overshield up to the maximum, e.g. from a pickup. Returns how much was actually added.
+        public float AddOvershield(float amount)
+        {
+            float before = _currentOvershield;
+            SetOvershield(_currentOvershield + Mathf.Max(0f, amount));
+            return _currentOvershield - before;
         }
 
         public void MakeInvulnerable(float duration)
