@@ -7,7 +7,7 @@ namespace ScalingShmup.PowerUps
 {
     // Every roll interval, rolls against a spawn chance; on a success it spawns a random power-up
     // prefab at a random point in the left half of the screen. Each player death raises the chance,
-    // capped at 100%, to help a struggling player. The raised chance carries over when a game over
+    // capped at Max Power Up Spawn Chance, to help a struggling player. The raised chance carries over when a game over
     // restarts the scene, and goes back to the Inspector value once the player wins.
     // AutoStaticsCleanup clears the carried chance whenever Play mode starts.
     [AutoStaticsCleanup]
@@ -22,6 +22,8 @@ namespace ScalingShmup.PowerUps
         [SerializeField, Range(0f, 1f)] private float _powerUpSpawnChance = 0.1f;
         [Tooltip("Added to the spawn chance each time the player dies. 0.25 adds 25 percentage points.")]
         [SerializeField, Range(0f, 1f)] private float _chanceIncreasePerDeath = 0.25f;
+        [Tooltip("Deaths can never raise the spawn chance above this.")]
+        [SerializeField, Range(0f, 1f)] private float _maxPowerUpSpawnChance = 1f;
         [Tooltip("Seconds between rolls.")]
         [SerializeField, Min(0.1f)] private float _powerUpRollRate = 2f;
         [Tooltip("Keeps spawned power-ups this far inside the screen edges.")]
@@ -91,7 +93,7 @@ namespace ScalingShmup.PowerUps
             if (deathCount > _deathsCounted)
             {
                 int newDeaths = deathCount - _deathsCounted;
-                _powerUpSpawnChance = Mathf.Min(1f, _powerUpSpawnChance + newDeaths * _chanceIncreasePerDeath);
+                _powerUpSpawnChance = Mathf.Min(_maxPowerUpSpawnChance, _powerUpSpawnChance + newDeaths * _chanceIncreasePerDeath);
                 s_carriedChance = _powerUpSpawnChance;
             }
 

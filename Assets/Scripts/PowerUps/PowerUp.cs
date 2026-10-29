@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ScalingShmup.Audio;
+using UnityEngine;
 
 namespace ScalingShmup.PowerUps
 {
@@ -11,6 +12,8 @@ namespace ScalingShmup.PowerUps
     {
         [Tooltip("Seconds the effect lasts once picked up.")]
         [SerializeField, Min(0.1f)] private float _duration = 8f;
+        [Tooltip("Played when the player picks this up.")]
+        [SerializeField] private SoundCue _pickupSound = new SoundCue();
 
         [Header("Lifetime in the scene")]
         [Tooltip("Seconds the pickup stays in the scene before it disappears.")]
@@ -80,6 +83,7 @@ namespace ScalingShmup.PowerUps
             }
 
             ApplyTo(receiver);
+            _pickupSound.Play();
             Destroy(gameObject);
         }
     }

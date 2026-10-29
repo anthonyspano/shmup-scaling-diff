@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6044893434823074416}
   - component: {fileID: 8898734239269043935}
   - component: {fileID: 8650875165681835396}
+  - component: {fileID: 6916770950282559337}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -192,6 +193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
   _destroyOnDeath: 0
+  _canShoot: 1
+  _shootSound:
+    _clip: {fileID: 8300000, guid: f06b54fd7623cdd4a8269349a7ccceaa, type: 3}
+    _volume: 1
 --- !u!114 &6044893434823074416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,3 +246,21 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 3537198034141965661, guid: 0b123795089ae2a40806f1209d536ba0, type: 3}
   _clip: {fileID: 7400000, guid: d6777f0b3aa9c694ba001d41dcc78ac4, type: 2}
   _scale: 0.7
+--- !u!114 &6916770950282559337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4735312179570064884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da548d1b0c026cb4bbc030d996a6bcc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.HealthSounds
+  _hitSound:
+    _clip: {fileID: 0}
+    _volume: 1
+  _deathSound:
+    _clip: {fileID: 8300000, guid: 4d9522aeb594817498249ff69310be20, type: 3}
+    _volume: 1

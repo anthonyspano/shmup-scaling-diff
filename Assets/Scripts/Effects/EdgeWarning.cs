@@ -11,6 +11,7 @@ namespace ScalingShmup.Effects
     {
         [Tooltip("Flashes per second.")]
         [SerializeField, Min(0.1f)] private float _flashRate = 6f;
+        public float _duration;
 
         private SpriteRenderer _spriteRenderer;
 
@@ -34,7 +35,7 @@ namespace ScalingShmup.Effects
         {
             IsShowing = true;
 
-            for (float elapsed = 0f; elapsed < duration; elapsed += Time.deltaTime)
+            for (float elapsed = 0f; elapsed < _duration; elapsed += Time.deltaTime)
             {
                 _spriteRenderer.enabled = Mathf.Repeat(elapsed * _flashRate, 1f) < 0.5f;
                 yield return null;

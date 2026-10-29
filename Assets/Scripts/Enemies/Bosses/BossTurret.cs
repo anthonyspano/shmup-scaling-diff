@@ -1,5 +1,6 @@
 ﻿using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
+using ScalingShmup.Audio;
 using UnityEngine;
 
 namespace ScalingShmup.Enemies.Bosses
@@ -15,6 +16,8 @@ namespace ScalingShmup.Enemies.Bosses
         [SerializeField] private ProjectileMotion _motion = ProjectileMotion.Straight(6f);
         [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
         [SerializeField] private GameObject _bulletPrefab;
+        [Tooltip("Played each time the turret fires.")]
+        [SerializeField] private SoundCue _fireSound = new SoundCue();
 
         private Enemy _owner;
         private Camera _camera;
@@ -54,6 +57,7 @@ namespace ScalingShmup.Enemies.Bosses
             _nextShotTime = Time.time + 1f / _shotsPerSecond;
             var damage = new DamageInfo(_damage, DamageType.EnemyFire, _owner != null ? _owner.gameObject : gameObject);
             pool.Get().Launch(transform.position, CurrentHeading(), _motion, damage);
+            _fireSound.Play();
         }
 
         // 0 at the starting corner, 1 at the other, then back again.

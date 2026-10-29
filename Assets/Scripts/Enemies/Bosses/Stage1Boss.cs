@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
+using ScalingShmup.Audio;
 using UnityEngine;
 
 namespace ScalingShmup.Enemies.Bosses
@@ -31,6 +32,10 @@ namespace ScalingShmup.Enemies.Bosses
         [SerializeField, Min(0.1f)] private float _figureEightDuration = 6f;
         [Tooltip("Seconds the boss waits after finishing each figure 8 before tracing the next.")]
         [SerializeField, Min(0f)] private float _pauseBetweenPaths = 1f;
+
+        [Header("Sounds")]
+        [Tooltip("Played when the boss switches to set 2.")]
+        [SerializeField] private SoundCue _setTwoSound = new SoundCue();
 
         private Health _health;
         private Rigidbody2D _rigidbody;
@@ -89,6 +94,7 @@ namespace ScalingShmup.Enemies.Bosses
             if (!_inSetTwo && current > 0f && current < max * _setTwoHealthFraction)
             {
                 _inSetTwo = true;
+                _setTwoSound.Play();
                 ReviveTurrets();
                 StopCoroutine(_movement);
                 _movement = StartCoroutine(SetTwoFigureEights());

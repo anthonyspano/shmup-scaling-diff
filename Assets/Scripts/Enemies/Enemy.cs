@@ -1,4 +1,5 @@
-using System;
+﻿using System;
+using ScalingShmup.Audio;
 using ScalingShmup.Combat;
 using UnityEngine;
 
@@ -13,6 +14,8 @@ namespace ScalingShmup.Enemies
         [SerializeField] private bool _destroyOnDeath = true;
         [Tooltip("When off, this enemy never fires. Its movement is unaffected.")]
         [SerializeField] private bool _canShoot = true;
+        [Tooltip("Played each time this enemy fires.")]
+        [SerializeField] private SoundCue _shootSound = new SoundCue();
 
         private Health _health;
 
@@ -30,6 +33,12 @@ namespace ScalingShmup.Enemies
         {
             get => _canShoot;
             set => _canShoot = value;
+        }
+
+        // Called by whatever fires on this enemy's behalf (e.g. WaveVolley).
+        public void PlayShootSound()
+        {
+            _shootSound.Play();
         }
 
         private void Awake()

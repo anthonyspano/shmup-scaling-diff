@@ -1,6 +1,7 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using ScalingShmup.Combat;
+using ScalingShmup.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,8 @@ namespace ScalingShmup.Player
         [SerializeField] private Vector2 _offset = new Vector2(0f, 1f);
         [SerializeField, Min(0f)] private float _cooldown = 0.4f;
         [SerializeField] private LayerMask _targetLayers;
+        [Tooltip("Played on every swing, hit or miss.")]
+        [SerializeField] private SoundCue _attackSound = new SoundCue();
 
         private readonly List<Collider2D> _hits = new List<Collider2D>();
         private readonly HashSet<IDamageable> _damagedThisSwing = new HashSet<IDamageable>();
@@ -70,6 +73,7 @@ namespace ScalingShmup.Player
                 }
             }
 
+            _attackSound.Play();
             Attacked?.Invoke();
         }
 

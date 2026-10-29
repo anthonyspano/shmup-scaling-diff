@@ -15,6 +15,9 @@ public class StrobeAlpha : MonoBehaviour
 
     public float maxAlpha;
 
+    private AudioSource audioSource;
+    public AudioClip hitSound;
+
     void Awake()
     {
         if(playerHitEvents == null)
@@ -29,6 +32,8 @@ public class StrobeAlpha : MonoBehaviour
         {
             playerHitEvents.PlayerHit += OnStrobeEvent;
         }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnDisable()
@@ -59,6 +64,7 @@ public class StrobeAlpha : MonoBehaviour
     public float pause;
     IEnumerator StrobeCounter(int loops)
     {
+        audioSource.PlayOneShot(hitSound, 1f);
         for(int i=0; i<loops; i++)
         {    
             yield return StartCoroutine(StrobeOff());

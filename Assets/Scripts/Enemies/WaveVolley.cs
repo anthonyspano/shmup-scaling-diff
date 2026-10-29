@@ -95,6 +95,7 @@ namespace ScalingShmup.Enemies
             {
                 var damage = new DamageInfo(_damage, DamageType.EnemyFire, enemy.gameObject);
                 pool.Get().Launch(enemy.transform.position, heading, _motion, damage);
+                enemy.PlayShootSound();
             }
         }
 

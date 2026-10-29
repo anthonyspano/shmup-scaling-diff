@@ -1,5 +1,6 @@
 ﻿using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
+using ScalingShmup.Audio;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,6 +19,8 @@ namespace ScalingShmup.Player
         [SerializeField] private ProjectileMotion _motion = ProjectileMotion.Straight(20f);
         [Tooltip("The normal shot pattern: one bullet per angle, in degrees from the ship's forward direction.")]
         [SerializeField] private float[] _defaultShotAngles = { 0f };
+        [Tooltip("Played once per shot (not per bullet).")]
+        [SerializeField] private SoundCue _fireSound = new SoundCue();
 
         private float[] _shotAngles;
         private GameObject _activeBulletPrefab;
@@ -82,6 +85,7 @@ namespace ScalingShmup.Player
             }
 
             var damage = new DamageInfo(_damage, DamageType.PhotonCannon, gameObject);
+            _fireSound.Play();
 
             foreach (Transform muzzle in _muzzles)
             {

@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using ScalingShmup.Combat;
 using ScalingShmup.Projectiles;
+using ScalingShmup.Audio;
 using UnityEngine;
 
 namespace ScalingShmup.Patterns
@@ -10,6 +11,8 @@ namespace ScalingShmup.Patterns
     {
         [Tooltip("Bullet prefab to fire. It needs a Projectile component.")]
         [SerializeField] private GameObject _bulletPrefab;
+        [Tooltip("Played once per burst.")]
+        [SerializeField] private SoundCue _fireSound = new SoundCue();
         [SerializeField] private BulletPattern[] _patterns;
         [SerializeField] private bool _loop = true;
         [SerializeField] private bool _playOnEnable = true;
@@ -121,6 +124,7 @@ namespace ScalingShmup.Patterns
             float aimAngle = GetAimAngle(origin);
             ProjectileMotion motion = pattern.GetMotion(burst);
             var damage = new DamageInfo(pattern.Damage, DamageType.EnemyFire, gameObject);
+            _fireSound.Play();
 
             for (int bullet = 0; bullet < pattern.BulletsPerBurst; bullet++)
             {
