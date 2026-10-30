@@ -26,8 +26,10 @@ namespace ScalingShmup.Game
         [SerializeField, Min(0f)] private float _restartDelay = 5f;
 
         [Header("Victory")]
-        [Tooltip("Seconds between winning and the scene reloading to start a fresh game.")]
+        [Tooltip("Seconds between winning and moving on to the Victory Scene (or reloading this scene if none is set).")]
         [SerializeField, Min(0f)] private float _victoryRestartDelay = 6f;
+        [Tooltip("Scene loaded after winning, e.g. Promo. It must be in the build's scene list. Leave empty to start a fresh game.")]
+        [SerializeField] private string _victoryScene = "Promo";
 
         private Coroutine _respawnRoutine;
 
@@ -114,7 +116,9 @@ namespace ScalingShmup.Game
             }
 
             SetState(GameState.Victory);
-            StartCoroutine(RestartAfterDelay(_victoryRestartDelay));
+            StartCoroutine(string.IsNullOrEmpty(_victoryScene)
+                ? RestartAfterDelay(_victoryRestartDelay)
+                : LoadSceneAfterDelay(_victoryScene, _victoryRestartDelay));
         }
 
         // Swaps the background music, e.g. to the boss theme. The new track loops.
@@ -123,6 +127,15 @@ namespace ScalingShmup.Game
             if (_music != null)
             {
                 _music.ChangeTrack(track, true);
+            }
+        }
+
+        // Fades the background music to silence, e.g. when the boss's health runs out.
+        public void FadeOutMusic(float duration)
+        {
+            if (_music != null)
+            {
+                _music.FadeOut(duration);
             }
         }
 
@@ -163,6 +176,12 @@ namespace ScalingShmup.Game
         {
             yield return new WaitForSeconds(delay);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private IEnumerator LoadSceneAfterDelay(string sceneName, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            SceneManager.LoadScene(sceneName);
         }
 
         private IEnumerator RespawnAfterDelay()

@@ -2458,7 +2458,7 @@ MonoBehaviour:
   _muzzles:
   - {fileID: 139485188}
   _shotsPerSecond: 6
-  _damage: 100
+  _damage: 1
   _motion:
     Speed: 20
     Acceleration: 0
@@ -3598,7 +3598,8 @@ MonoBehaviour:
   _startAutomatically: 1
   _music: {fileID: 1260761151}
   _restartDelay: 5
-  _victoryRestartDelay: 6
+  _victoryRestartDelay: 3
+  _victoryScene: Promo
 --- !u!4 &1260761148
 Transform:
   m_ObjectHideFlags: 0
@@ -4160,6 +4161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTheme
   _theme: {fileID: 8300000, guid: 0d4afc489c0c40848a68477db38970f4, type: 3}
+  _fadeOutDuration: 2
   _gameManager: {fileID: 1260761147}
 --- !u!114 &1315489502
 MonoBehaviour:
@@ -5686,7 +5688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1692669334
 Transform:
   m_ObjectHideFlags: 0
