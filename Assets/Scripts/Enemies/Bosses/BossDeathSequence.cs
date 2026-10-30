@@ -9,8 +9,9 @@ namespace ScalingShmup.Enemies.Bosses
 {
     // When the boss's health runs out, switches off every other script and collider on the boss
     // (and its turrets, exhausts and health bar), then plays its explosions one after another at
-    // random points within Spawn Radius of the boss's centre. Once the last explosion's sound has
-    // finished, it raises Finished and destroys the boss.
+    // random points within Spawn Radius of the boss's centre. The boss is destroyed the moment the
+    // last explosion fires; Finished reports how long that explosion still has to play, so
+    // listeners (e.g. BossEncounter) can wait for it to end.
     // Turn off Remove On Death on the boss's Enemy component, so the boss stays for the sequence.
     [RequireComponent(typeof(Health))]
     public class BossDeathSequence : MonoBehaviour
@@ -33,7 +34,8 @@ namespace ScalingShmup.Enemies.Bosses
 
         private Health _health;
 
-        public event Action<BossDeathSequence> Finished;
+        // Raised as the boss is destroyed, with the seconds left until the last explosion ends.
+        public event Action<float> Finished;
 
         private void Awake()
         {
@@ -105,18 +107,22 @@ namespace ScalingShmup.Enemies.Bosses
 
                 if (isLast)
                 {
-                    // Win only once the last explosion has been heard (and seen) in full.
+                    // The explosion and its sound live on their own objects, so they keep playing.
                     float soundLength = blast.Sound.Clip != null ? blast.Sound.Clip.length : 0f;
                     float animationLength = blast.Animation != null ? blast.Animation.length : 0f;
-                    yield return new WaitForSeconds(Mathf.Max(soundLength, animationLength));
+                    Finish(Mathf.Max(soundLength, animationLength));
+                    yield break;
                 }
-                else
-                {
-                    yield return new WaitForSeconds(_timeBetweenExplosions);
-                }
+
+                yield return new WaitForSeconds(_timeBetweenExplosions);
             }
 
-            Finished?.Invoke(this);
+            Finish(0f);
+        }
+
+        private void Finish(float secondsUntilLastExplosionEnds)
+        {
+            Finished?.Invoke(secondsUntilLastExplosionEnds);
             Destroy(gameObject);
         }
 

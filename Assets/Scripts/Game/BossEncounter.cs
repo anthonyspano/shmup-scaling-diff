@@ -1,3 +1,4 @@
+using System.Collections;
 using ScalingShmup.Enemies;
 using ScalingShmup.Enemies.Bosses;
 using UnityEngine;
@@ -32,8 +33,8 @@ namespace ScalingShmup.Game
             }
         }
 
-        // A boss with a death sequence wins the game once the sequence has finished and the boss
-        // is destroyed; otherwise it wins the moment the boss is defeated.
+        // A boss with a death sequence wins the game once its last explosion has played out;
+        // otherwise it wins the moment the boss is defeated.
         private void OnEnable()
         {
             if (_waveSpawner != null)
@@ -69,8 +70,16 @@ namespace ScalingShmup.Game
             }
         }
 
-        private void OnBossDestroyed(BossDeathSequence sequence)
+        // The boss is gone as its last explosion fires; the win waits until that explosion ends.
+        private void OnBossDestroyed(float secondsUntilLastExplosionEnds)
         {
+            StartCoroutine(WinAfter(secondsUntilLastExplosionEnds));
+        }
+
+        private IEnumerator WinAfter(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+
             if (_gameManager != null)
             {
                 _gameManager.WinGame();
