@@ -475,7 +475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
-  _shotsPerSecond: 0.5
+  _shotsPerSecond: 0.4
+  _aimedShotsPerSecond: 0.2
   _sweepDuration: 3
   _damage: 1
   _motion:
@@ -1635,7 +1636,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
-  _shotsPerSecond: 0.5
+  _shotsPerSecond: 0.4
+  _aimedShotsPerSecond: 0.2
   _sweepDuration: 3
   _damage: 1
   _motion:
@@ -1887,7 +1889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
-  _shotsPerSecond: 0.5
+  _shotsPerSecond: 0.4
+  _aimedShotsPerSecond: 0.2
   _sweepDuration: 3
   _damage: 1
   _motion:
@@ -3754,6 +3757,7 @@ GameObject:
   - component: {fileID: 1315489500}
   - component: {fileID: 1315489499}
   - component: {fileID: 1315489501}
+  - component: {fileID: 1315489502}
   m_Layer: 8
   m_Name: Stage 1 boss
   m_TagString: Untagged
@@ -3948,7 +3952,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f10c831971e837448508bac13fab354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Combat.Health
-  _maxHealth: 60
+  _maxHealth: 40
   _healthDamagedBy: 3
   _maxOvershield: 0
   _overshieldDamagedBy: 1
@@ -4152,6 +4156,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTheme
   _theme: {fileID: 8300000, guid: 0d4afc489c0c40848a68477db38970f4, type: 3}
   _gameManager: {fileID: 1260761147}
+--- !u!114 &1315489502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0608a083037357f43a12a8c0784b83e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurretTargeting
+  _aimingTurretCount: 2
+  _player: {fileID: 1057350962}
 --- !u!1001 &1370264273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4604,7 +4622,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c04f4a6eec3a44b33ad555909ad4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurret
-  _shotsPerSecond: 0.5
+  _shotsPerSecond: 0.4
+  _aimedShotsPerSecond: 0.2
   _sweepDuration: 3
   _damage: 1
   _motion:
@@ -5620,7 +5639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1692669334
 Transform:
   m_ObjectHideFlags: 0

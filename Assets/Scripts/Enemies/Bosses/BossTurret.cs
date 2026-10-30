@@ -5,10 +5,13 @@ using UnityEngine;
 namespace ScalingShmup.Enemies.Bosses
 {
     // Sprays bullets while sweeping its aim back and forth between the screen's top-left and
-    // bottom-left corners. The boss decides which corner each turret starts from.
+    // bottom-left corners. The boss decides which corner each turret starts from. While given a
+    // target (see BossTurretTargeting), it aims straight at the target at its own fire rate instead.
     public class BossTurret : MonoBehaviour
     {
         [SerializeField, Min(0.1f)] private float _shotsPerSecond = 6f;
+        [Tooltip("Fire rate while this turret is aiming at the player instead of sweeping.")]
+        [SerializeField, Min(0.1f)] private float _aimedShotsPerSecond = 3f;
         [Tooltip("Seconds to sweep from one corner to the other.")]
         [SerializeField, Min(0.1f)] private float _sweepDuration = 1.5f;
         [SerializeField, Min(0f)] private float _damage = 1f;
@@ -23,6 +26,9 @@ namespace ScalingShmup.Enemies.Bosses
         private bool _startsAtTop;
         private float _sweepTime;
         private float _nextShotTime;
+
+        // Set to aim at something (e.g. the player); null to go back to sweeping.
+        public Transform Target { get; set; }
 
         public void Configure(Enemy owner, Camera viewCamera, bool startsAtTop)
         {
@@ -53,9 +59,11 @@ namespace ScalingShmup.Enemies.Bosses
                 return;
             }
 
-            _nextShotTime = Time.time + 1f / _shotsPerSecond;
+            bool aiming = Target != null;
+            _nextShotTime = Time.time + 1f / (aiming ? _aimedShotsPerSecond : _shotsPerSecond);
+            float heading = aiming ? HeadingTo(Target.position) : CurrentHeading();
             var damage = new DamageInfo(_damage, DamageType.EnemyFire, _owner != null ? _owner.gameObject : gameObject);
-            pool.Get().Launch(transform.position, CurrentHeading(), _motion, damage);
+            pool.Get().Launch(transform.position, heading, _motion, damage);
 
             if (_shootSoundFrom != null)
             {
