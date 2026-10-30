@@ -1,10 +1,11 @@
 using ScalingShmup.Enemies;
+using ScalingShmup.Enemies.Bosses;
 using UnityEngine;
 
 namespace ScalingShmup.Game
 {
     // Keeps the boss hidden until the WaveSpawner reports that every wave has been defeated, and
-    // tells the GameManager the game is won when the boss is defeated.
+    // tells the GameManager the game is won when the boss is destroyed.
     public class BossEncounter : MonoBehaviour
     {
         [SerializeField] private WaveSpawner _waveSpawner;
@@ -14,6 +15,7 @@ namespace ScalingShmup.Game
         [SerializeField] private GameManager _gameManager;
 
         private Enemy _bossEnemy;
+        private BossDeathSequence _bossDeathSequence;
 
         private void Awake()
         {
@@ -25,10 +27,13 @@ namespace ScalingShmup.Game
             if (_boss != null)
             {
                 _bossEnemy = _boss.GetComponent<Enemy>();
+                _bossDeathSequence = _boss.GetComponent<BossDeathSequence>();
                 _boss.SetActive(false);
             }
         }
 
+        // A boss with a death sequence wins the game once the sequence has finished and the boss
+        // is destroyed; otherwise it wins the moment the boss is defeated.
         private void OnEnable()
         {
             if (_waveSpawner != null)
@@ -36,7 +41,11 @@ namespace ScalingShmup.Game
                 _waveSpawner.AllWavesDefeated += SpawnBoss;
             }
 
-            if (_bossEnemy != null)
+            if (_bossDeathSequence != null)
+            {
+                _bossDeathSequence.Finished += OnBossDestroyed;
+            }
+            else if (_bossEnemy != null)
             {
                 _bossEnemy.Defeated += OnBossDefeated;
             }
@@ -49,9 +58,22 @@ namespace ScalingShmup.Game
                 _waveSpawner.AllWavesDefeated -= SpawnBoss;
             }
 
+            if (_bossDeathSequence != null)
+            {
+                _bossDeathSequence.Finished -= OnBossDestroyed;
+            }
+
             if (_bossEnemy != null)
             {
                 _bossEnemy.Defeated -= OnBossDefeated;
+            }
+        }
+
+        private void OnBossDestroyed(BossDeathSequence sequence)
+        {
+            if (_gameManager != null)
+            {
+                _gameManager.WinGame();
             }
         }
 

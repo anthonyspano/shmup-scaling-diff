@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _removeOnDeath: 1
   _destroyOnDeath: 0
   _canShoot: 1
   _shootSound:
@@ -1708,6 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _removeOnDeath: 1
   _destroyOnDeath: 0
   _canShoot: 1
   _shootSound:
@@ -1961,6 +1963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _removeOnDeath: 1
   _destroyOnDeath: 0
   _canShoot: 1
   _shootSound:
@@ -2455,7 +2458,7 @@ MonoBehaviour:
   _muzzles:
   - {fileID: 139485188}
   _shotsPerSecond: 6
-  _damage: 1
+  _damage: 100
   _motion:
     Speed: 20
     Acceleration: 0
@@ -3758,6 +3761,7 @@ GameObject:
   - component: {fileID: 1315489499}
   - component: {fileID: 1315489501}
   - component: {fileID: 1315489502}
+  - component: {fileID: 1315489503}
   m_Layer: 8
   m_Name: Stage 1 boss
   m_TagString: Untagged
@@ -3915,7 +3919,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315489487}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89c6e42d2df991e4db0ff4afca251141, type: 3}
   m_Name: 
@@ -3935,6 +3939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _removeOnDeath: 0
   _destroyOnDeath: 1
   _canShoot: 1
   _shootSound:
@@ -4170,6 +4175,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossTurretTargeting
   _aimingTurretCount: 2
   _player: {fileID: 1057350962}
+--- !u!114 &1315489503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315489487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ab61d6d976e5a4c88407aeae5b2ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Bosses.BossDeathSequence
+  _explosionPrefab: {fileID: 3537198034141965661, guid: 0b123795089ae2a40806f1209d536ba0, type: 3}
+  _explosions:
+  - Animation: {fileID: 7400000, guid: 52baf0630d0980442864489ba2f0ccf4, type: 2}
+    Scale: 2.5
+    Sound:
+      _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
+      _volume: 1
+  - Animation: {fileID: 7400000, guid: 35da22c6cf7b23e4d842c4a0fa0e1dfe, type: 2}
+    Scale: 2.5
+    Sound:
+      _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
+      _volume: 1
+  - Animation: {fileID: 7400000, guid: d6777f0b3aa9c694ba001d41dcc78ac4, type: 2}
+    Scale: 3
+    Sound:
+      _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
+      _volume: 1
+  - Animation: {fileID: 7400000, guid: 5cea4b2af07648949aa78ec49f67f63e, type: 2}
+    Scale: 3
+    Sound:
+      _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
+      _volume: 1
+  - Animation: {fileID: 7400000, guid: 52baf0630d0980442864489ba2f0ccf4, type: 2}
+    Scale: 5
+    Sound:
+      _clip: {fileID: 8300000, guid: a40e27281f956404db3d345dd49cfbe5, type: 3}
+      _volume: 1
+  _timeBetweenExplosions: 0.4
+  _spawnRadius: 1.5
 --- !u!1001 &1370264273
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4694,6 +4740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d8302e2a7a7c54e831829c63751e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Enemies.Enemy
+  _removeOnDeath: 1
   _destroyOnDeath: 0
   _canShoot: 1
   _shootSound:
@@ -5639,7 +5686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1692669334
 Transform:
   m_ObjectHideFlags: 0

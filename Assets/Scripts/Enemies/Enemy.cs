@@ -10,6 +10,8 @@ namespace ScalingShmup.Enemies
     [RequireComponent(typeof(Health))]
     public class Enemy : MonoBehaviour
     {
+        [Tooltip("Remove the object on death. Turn off to leave it in place, e.g. for a boss with a BossDeathSequence.")]
+        [SerializeField] private bool _removeOnDeath = true;
         [Tooltip("Destroy the object on death. When off it is deactivated so a spawner can reuse it.")]
         [SerializeField] private bool _destroyOnDeath = true;
         [Tooltip("When off, this enemy never fires. Its movement is unaffected.")]
@@ -59,6 +61,11 @@ namespace ScalingShmup.Enemies
         private void OnDied(Health health)
         {
             Defeated?.Invoke(this);
+
+            if (!_removeOnDeath)
+            {
+                return;
+            }
 
             if (_destroyOnDeath)
             {
