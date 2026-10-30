@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using ScalingShmup.Enemies;
 using ScalingShmup.Enemies.Bosses;
@@ -17,6 +18,8 @@ namespace ScalingShmup.Game
 
         private Enemy _bossEnemy;
         private BossDeathSequence _bossDeathSequence;
+
+        public event Action BossSpawned;
 
         private void Awake()
         {
@@ -101,6 +104,7 @@ namespace ScalingShmup.Game
             if (_boss != null)
             {
                 _boss.SetActive(true);
+                BossSpawned?.Invoke();
             }
         }
 

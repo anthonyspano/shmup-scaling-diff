@@ -71,6 +71,7 @@ namespace ScalingShmup.Enemies
         public event Action AllWavesDefeated;
 
         public int CurrentWave { get; private set; }
+        public int MaxWaves => _maxWaves;
         public int ActiveWaveCount => _waves.Count;
         public int AliveCount => _waveOf.Count;
 
