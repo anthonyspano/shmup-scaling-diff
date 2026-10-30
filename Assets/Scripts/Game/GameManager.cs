@@ -56,6 +56,14 @@ namespace ScalingShmup.Game
             }
         }
 
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
+
         private void OnEnable()
         {
             _player.Died += OnPlayerDied;

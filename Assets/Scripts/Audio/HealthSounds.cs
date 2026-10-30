@@ -39,6 +39,8 @@ namespace ScalingShmup.Audio
             {
                 _hitSound.Play();
             }
+            else
+                OnDied(health);
         }
 
         private void OnDied(Health health)

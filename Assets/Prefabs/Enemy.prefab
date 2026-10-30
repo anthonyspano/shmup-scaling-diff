@@ -196,7 +196,7 @@ MonoBehaviour:
   _canShoot: 1
   _shootSound:
     _clip: {fileID: 8300000, guid: f06b54fd7623cdd4a8269349a7ccceaa, type: 3}
-    _volume: 1
+    _volume: 0.85
 --- !u!114 &6044893434823074416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,5 +262,5 @@ MonoBehaviour:
     _clip: {fileID: 0}
     _volume: 1
   _deathSound:
-    _clip: {fileID: 8300000, guid: 4d9522aeb594817498249ff69310be20, type: 3}
+    _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
     _volume: 1

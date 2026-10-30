@@ -130,8 +130,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.12
+  m_Offset: {x: 0, y: -0.0020966232}
+  m_Radius: 0.15146813
 --- !u!114 &1901848234093528601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,12 +147,13 @@ MonoBehaviour:
   _duration: 7
   _pickupSound:
     _clip: {fileID: 8300000, guid: 36f40e0180419e243b37208216f4cb46, type: 3}
-    _volume: 1
+    _volume: 0.7
   _lifetime: 12
   _blinkTime: 3
   _blinkRate: 1.5
   _shotAngles:
   - 30
+  - 0
   - -30
 --- !u!95 &5199882385380381389
 Animator:

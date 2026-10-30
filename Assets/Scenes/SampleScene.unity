@@ -2252,7 +2252,6 @@ GameObject:
   - component: {fileID: 1057350974}
   - component: {fileID: 1057350975}
   - component: {fileID: 1057350976}
-  - component: {fileID: 1057350977}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2453,7 +2452,7 @@ MonoBehaviour:
   _muzzles:
   - {fileID: 139485188}
   _shotsPerSecond: 6
-  _damage: 10
+  _damage: 1
   _motion:
     Speed: 20
     Acceleration: 0
@@ -2465,7 +2464,7 @@ MonoBehaviour:
   - 0
   _fireSound:
     _clip: {fileID: 8300000, guid: aecd8c4ad2d200648a60a62c46ad5f51, type: 3}
-    _volume: 1
+    _volume: 0.7
 --- !u!114 &1057350969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2516,7 +2515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1610f5d8e265a448bdbe19be0cc3db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Player.PlayerHitEvents
-  _invulnerabilityDuration: 1
+  _invulnerabilityDuration: 2.5
 --- !u!114 &1057350972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,10 +2567,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.HealthSounds
   _hitSound:
     _clip: {fileID: 8300000, guid: 9476b500e2682dd41b4933ed2b9f5295, type: 3}
-    _volume: 1
+    _volume: 0.7
   _deathSound:
     _clip: {fileID: 8300000, guid: 09f3c913f9e902a47b1a1e95aa483d4b, type: 3}
-    _volume: 1
+    _volume: 0.7
 --- !u!82 &1057350976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2669,21 +2668,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1057350977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1057350961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0744068212a6b6646a08f78cbc446790, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
-  _thrusterSound:
-    _clip: {fileID: 0}
-    _volume: 1
 --- !u!1001 &1110608191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3470,7 +3454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.6
 --- !u!82 &1259004639
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3652,7 +3636,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e717841c2dc987342b4f7075906ff18b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -4733,7 +4717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.6
 --- !u!82 &1590317438
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4981,7 +4965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.55
 --- !u!82 &1637264862
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5206,7 +5190,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -5404,7 +5388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.6
 --- !u!82 &1655199956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5521,7 +5505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.55
 --- !u!82 &1692369049
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5668,8 +5652,8 @@ MonoBehaviour:
   _waveSize: 6
   _waveSizeIncrease: 0
   _spawnRate: 3
-  _timeBetweenWaves: 2
-  _maxWaves: 2
+  _timeBetweenWaves: 4
+  _maxWaves: 8
   _startOnPlay: 1
   _firstWaveDelay: 5
   _targetCorner: 0
@@ -5723,7 +5707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScalingShmup.Audio.ThrusterSound
   _thrusterSound:
     _clip: {fileID: 8300000, guid: e2eaeeaebd0df284f97eafeaa48d9666, type: 3}
-    _volume: 0.5
+    _volume: 0.6
 --- !u!82 &1695639902
 AudioSource:
   m_ObjectHideFlags: 0
